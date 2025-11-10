@@ -4,8 +4,7 @@
 <body>
     <div class="sidebar">
         <div class="folder">
-            <div class="element">
-            </div>
+            <div class="element"><a href="?page=saisons">Saisons</a></div>
         </div>
     </div>
     <div class="main_panel">
@@ -13,10 +12,10 @@
 </body>
 <script>
 const params = new URLSearchParams(window.location.search);
-const page = params.get("page") || "accueil";
+const page = params.get("page") || "landing-page";
 const mainPanel = document.querySelector(".main_panel");
 switch (page) {
-  case "saisons":
+  case "landing-page":
     mainPanel.innerHTML = `
       <h1>Bienvenue sur la page d’accueil</h1>
       <p>Ceci est le contenu de la page d'accueil.</p>
