@@ -8,6 +8,57 @@
                     Gabriel
 -------------------------------------------------------------------
 */
+body {
+    display : flex;
+  margin: 0;
+  font-family: sans-serif;
+}
 .sidebar {
-    
+  background: #111;
+  color: #fff;
+  width: 200px;
+  min-height: 100vh;
+  padding: 10px;
+  font-family: sans-serif;
+}
+
+.folder .element {
+  position: relative;
+  margin-bottom: 5px;
+  cursor: pointer;
+}
+
+.element > a {
+  display: block;
+  color: #fff;
+  text-decoration: none;
+  padding: 8px;
+  border-radius: 4px;
+  transition: 0.2s;
+}
+
+.element > a:hover {
+  background: #222;
+}
+
+.dropdown {
+  display: none;
+  flex-direction: column;
+  margin-left: 10px;
+  margin-top: 5px;
+}
+
+.dropdown a {
+  padding: 6px;
+  font-size: 14px;
+  color: #ccc;
+}
+
+.dropdown a:hover {
+  color: #fff;
+}
+.main_panel {
+  margin-left: 220px;
+  padding: 20px;
+  font-family: sans-serif;
 }

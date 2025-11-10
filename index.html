@@ -1,46 +1,150 @@
 <!DOCTYPE html>
-<link href="styles.css" rel="stylesheet" />
 <html>
+<head>
+  <meta charset="UTF-8">
+  <title>Sidebar Menu</title>
+  <link href="styles.css" rel="stylesheet" />
+</head>
 <body>
-    <div class="sidebar">
-        <div class="folder">
-            <div class="element"><a href="?page=saisons">Saisons</a></div>
+  <div class="sidebar">
+    <div class="folder">
+      <div class="element">
+        <a>Saisons</a>
+        <!-- Sous-menu -->
+        <div class="dropdown">
+          <a href ="?page=s01">Saison 1</a>
+          <a href ="?page=s02">Saison 2</a>
+          <a href ="?page=s03">Saison 3</a>
+          <a href ="?page=s04">Saison 4</a>
+          <a href ="?page=s05">Saison 5</a>
+          <a href ="?page=s06">Saison 6</a>
+          <a href ="?page=s07">Saison 7</a>
+          <a href ="?page=s08">Saison 8</a>
+          <a href ="?page=s09">Saison 9</a>
+          <a href ="?page=s10">Saison 10</a>
+          <a href ="?page=s11">Saison 11</a>
         </div>
+      </div>
     </div>
-    <div class="main_panel">
-    </div>
+  </div>
+
+  <div class="main_panel"></div>
+
+  <script>
+    // ===== Gestion des pages =====
+    const params = new URLSearchParams(window.location.search);
+    const page = params.get("page") || "landing-page";
+    const mainPanel = document.querySelector(".main_panel");
+
+    switch (page) {
+      case "landing-page":
+        mainPanel.innerHTML = `
+          <h1>Bienvenue sur la page d’accueil</h1>
+          <p>Ceci est le contenu de la page d'accueil.</p>
+        `;
+        break;
+      case "acteur":
+        mainPanel.innerHTML = `
+          <h1>Contact</h1>
+          <p>Envoyez-nous un message via le formulaire ci-dessous.</p>
+        `;
+        break;
+      case "lore":
+        mainPanel.innerHTML = `
+          <h1>À propos</h1>
+          <p>Nous sommes une équipe passionnée par le web.</p>
+        `;
+        break;
+      case "s01":
+        mainPanel.innerHTML = `
+          <h1>Saison 1</h1>
+          <p>Contenu de la Saison 1.</p>
+        `;
+        break;
+      case "s02":
+        mainPanel.innerHTML = `
+          <h1>Saison 2</h1>
+          <p>Contenu de la Saison 2.</p>
+        `;
+        break;
+      case "s03":
+        mainPanel.innerHTML = `
+          <h1>Saison 3</h1>
+          <p>Contenu de la Saison 3.</p>
+        `;
+        break;
+      case "s04":
+        mainPanel.innerHTML = `
+          <h1>Saison 4</h1>
+          <p>Contenu de la Saison 4.</p>
+        `;
+        break;
+      case "s05":
+        mainPanel.innerHTML = `
+          <h1>Saison 5</h1>
+          <p>Contenu de la Saison 5.</p>
+        `;
+        break;
+      case "s06":
+        mainPanel.innerHTML = `
+          <h1>Saison 6</h1>
+          <p>Contenu de la Saison 6.</p>
+        `;
+        break;
+      case "s07":
+        mainPanel.innerHTML = `
+          <h1>Saison 7</h1>
+          <p>Contenu de la Saison 7.</p>
+        `;
+        break;
+      case "s08":
+        mainPanel.innerHTML = `
+          <h1>Saison 8</h1>
+          <p>Contenu de la Saison 8.</p>
+        `;
+        break;
+      case "s09":
+        mainPanel.innerHTML = `
+          <h1>Saison 9</h1>
+          <p>Contenu de la Saison 9.</p>
+        `;
+        break;
+      case "s10":
+        mainPanel.innerHTML = `
+          <h1>Saison 10</h1>
+          <p>Contenu de la Saison 10.</p>
+        `;
+        break;
+      case "s11":
+        mainPanel.innerHTML = `
+          <h1>Saison 11</h1>
+          <p>Contenu de la Saison 11.</p>
+        `;
+        break;
+      default:
+        mainPanel.innerHTML = `
+          <h1>404 - Page introuvable</h1>
+          <p>La page demandée n'existe pas.</p>
+        `;
+    }
+
+    // ===== Gestion du menu déroulant =====
+    document.querySelectorAll('.folder .element > a').forEach(link => {
+      link.addEventListener('click', e => {
+        e.preventDefault(); // empêche la navigation immédiate
+        const dropdown = link.nextElementSibling;
+        if (dropdown) {
+          dropdown.style.display = dropdown.style.display === 'flex' ? 'none' : 'flex';
+        }
+      });
+    });
+
+    // Optionnel : fermer le menu si clic ailleurs
+    document.addEventListener('click', e => {
+      if (!e.target.closest('.folder .element')) {
+        document.querySelectorAll('.dropdown').forEach(d => d.style.display = 'none');
+      }
+    });
+  </script>
 </body>
-<script>
-const params = new URLSearchParams(window.location.search);
-const page = params.get("page") || "landing-page";
-const mainPanel = document.querySelector(".main_panel");
-switch (page) {
-  case "landing-page":
-    mainPanel.innerHTML = `
-      <h1>Bienvenue sur la page d’accueil</h1>
-      <p>Ceci est le contenu de la page d'accueil.</p>
-    `;
-    break;
-
-  case "acteur":
-    mainPanel.innerHTML = `
-      <h1>Contact</h1>
-      <p>Envoyez-nous un message via le formulaire ci-dessous.</p>
-    `;
-    break;
-
-  case "lore":
-    mainPanel.innerHTML = `
-      <h1>À propos</h1>
-      <p>Nous sommes une équipe passionnée par le web.</p>
-    `;
-    break;
-
-  default:
-    mainPanel.innerHTML = `
-      <h1>404 - Page introuvable</h1>
-      <p>La page demandée n'existe pas.</p>
-    `;
-}
-</script>
 </html>
