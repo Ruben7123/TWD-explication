@@ -1,0 +1,708 @@
+{
+  "Saison 1": [
+    {
+      "nom": "Rick Grimes",
+      "acteur": "Andrew Lincoln",
+      "description": "Ancien adjoint du shérif, il se réveille d'un coma dans un monde dévasté par une apocalypse zombie. C'est le protagoniste principal."
+    },
+    {
+      "nom": "Lori Grimes",
+      "acteur": "Sarah Wayne Callies",
+      "description": "Épouse de Rick, elle croit son mari mort et entame une relation avec Shane avant que Rick ne les retrouve."
+    },
+    {
+      "nom": "Carl Grimes",
+      "acteur": "Chandler Riggs",
+      "description": "Fils de Rick et Lori, jeune garçon essayant de s'adapter à ce nouveau monde."
+    },
+    {
+      "nom": "Shane Walsh",
+      "acteur": "Jon Bernthal",
+      "description": "Meilleur ami et collègue de Rick avant l'apocalypse. Il devient l'un des leaders du camp avant le retour de Rick."
+    },
+    {
+      "nom": "Glenn Rhee",
+      "acteur": "Steven Yeun",
+      "description": "Jeune livreur débrouillard. Il sauve Rick à Atlanta et devient un membre essentiel du groupe."
+    },
+    {
+      "nom": "Andrea",
+      "acteur": "Laurie Holden",
+      "description": "Avocate avant l'épidémie, elle est très proche de sa sœur Amy. Son personnage évoluera beaucoup dans la série."
+    },
+    {
+      "nom": "Amy",
+      "acteur": "Emma Bell",
+      "description": "Sœur cadette d'Andrea, elle meurt tragiquement dans le camp."
+    },
+    {
+      "nom": "Dale Horvath",
+      "acteur": "Jeffrey DeMunn",
+      "description": "Vieil homme bienveillant, propriétaire du camping-car. Il sert souvent de voix morale du groupe."
+    },
+    {
+      "nom": "Carol Peletier",
+      "acteur": "Melissa McBride",
+      "description": "Femme battue au début de la série, elle est mariée à Ed et mère de Sophia."
+    },
+    {
+      "nom": "Sophia Peletier",
+      "acteur": "Madison Lintz",
+      "description": "Fille de Carol, encore jeune dans la première saison."
+    },
+    {
+      "nom": "Ed Peletier",
+      "acteur": "Adam Minarovich",
+      "description": "Mari violent de Carol, il meurt dans la première saison."
+    },
+    {
+      "nom": "Daryl Dixon",
+      "acteur": "Norman Reedus",
+      "description": "Chasseur et pisteur, frère de Merle. Il devient rapidement un membre essentiel du groupe (bien que son frère soit plus problématique)."
+    },
+    {
+      "nom": "Merle Dixon",
+      "acteur": "Michael Rooker",
+      "description": "Frère aîné de Daryl, raciste et violent, il est laissé menotté sur un toit à Atlanta."
+    },
+    {
+      "nom": "Jacqui",
+      "acteur": "Jeryl Prescott Sales",
+      "description": "Membre du groupe de survivants d'Atlanta, elle choisit de rester au CDC à la fin de la saison."
+    },
+    {
+      "nom": "Jim",
+      "acteur": "Andrew Rothenberg",
+      "description": "Survivant du camp qui est mordu et laissé sur le bord de la route selon sa volonté."
+    },
+    {
+      "nom": "Dr. Edwin Jenner",
+      "acteur": "Noah Emmerich",
+      "description": "Scientifique solitaire au CDC d'Atlanta. Il explique au groupe la nature de l'infection et fait exploser le centre à la fin de la saison."
+    }
+  ],
+  "Saison 2": [
+    {
+      "nom": "Hershel Greene",
+      "acteur": "Scott Wilson",
+      "description": "Fermier, vétérinaire et homme de foi. Il abrite le groupe sur sa ferme et croit d'abord que les rôdeurs peuvent être guéris. Figure morale et paternelle du groupe."
+    },
+    {
+      "nom": "Maggie Greene",
+      "acteur": "Lauren Cohan",
+      "description": "Fille d'Hershel, courageuse et indépendante. Elle tombe amoureuse de Glenn, formant l'un des couples centraux de la série."
+    },
+    {
+      "nom": "Beth Greene",
+      "acteur": "Emily Kinney",
+      "description": "Jeune sœur de Maggie. Traumatisée par la mort de proches, elle lutte avec la dépression mais reste un symbole d'innocence."
+    },
+    {
+      "nom": "Otis",
+      "acteur": "Pruitt Taylor Vince",
+      "description": "Fermier travaillant avec Hershel. Il blesse accidentellement Carl et tente de se racheter en aidant Shane à trouver du matériel médical."
+    },
+    {
+      "nom": "Patricia",
+      "acteur": "Jane McNeill",
+      "description": "Épouse d'Otis. Elle aide Hershel à soigner les blessés et s'occupe de la ferme."
+    },
+    {
+      "nom": "Randall Culver",
+      "acteur": "Michael Zegen",
+      "description": "Jeune homme capturé par le groupe après une fusillade. Son sort provoque un fort conflit moral entre Rick et Shane."
+    }
+  ],
+  "Saison 3": [
+    {
+      "nom": "Michonne",
+      "acteur": "Danai Gurira",
+      "description": "Mystérieuse survivante armée d'un katana, accompagnée au départ de deux rôdeurs enchaînés. Guerrière redoutable et farouchement indépendante. Elle devient l'un des personnages les plus emblématiques de la série."
+    },
+    {
+      "nom": "Axel",
+      "acteur": "Lew Temple",
+      "description": "Prisonnier au comportement plutôt calme et amical. Il rejoint le groupe de Rick après la libération de la prison."
+    },
+    {
+      "nom": "Oscar",
+      "acteur": "Vincent Ward",
+      "description": "Autre détenu de la prison, loyal et courageux. Il gagne la confiance de Rick et aide activement le groupe."
+    },
+    {
+      "nom": "Tomas",
+      "acteur": "Nick Gomez",
+      "description": "Chef du petit groupe de prisonniers à la découverte de Rick. Hostile et dangereux, il s'oppose rapidement à lui."
+    },
+    {
+      "nom": "Andrew",
+      "acteur": "Markice Moore",
+      "description": "Prisonnier du même groupe, rancunier et instable, il devient une menace pour Rick et les siens."
+    },
+    {
+      "nom": "Le Gouverneur (Philip Blake)",
+      "acteur": "David Morrissey",
+      "description": "Charismatique mais tyrannique, il dirige la ville fortifiée de Woodbury. Principal antagoniste de la saison."
+    },
+    {
+      "nom": "Milton Mamet",
+      "acteur": "Dallas Roberts",
+      "description": "Scientifique de Woodbury, loyal au Gouverneur mais plus humaniste. Il cherche à comprendre la transformation des rôdeurs."
+    },
+    {
+      "nom": "Caesar Martinez",
+      "acteur": "Jose Pablo Cantillo",
+      "description": "Bras droit du Gouverneur, soldat expérimenté et fidèle. (Il reviendra plus tard dans la série.)"
+    },
+    {
+      "nom": "Karen",
+      "acteur": "Melissa Ponzio",
+      "description": "Habitante de Woodbury. Elle survivra à l'attaque de la prison et rejoindra le groupe de Rick dans la saison suivante."
+    },
+    {
+      "nom": "Haley",
+      "acteur": "Alexa Nikolas",
+      "description": "Tireuse et gardienne de la clôture de Woodbury, elle s'occupe de la sécurité de la communauté."
+    },
+    {
+      "nom": "Tyreese Williams",
+      "acteur": "Chad L. Coleman",
+      "description": "Frère de Sasha, il arrive plus tard dans la saison avec un petit groupe de survivants. Fort, protecteur et compatissant."
+    },
+    {
+      "nom": "Sasha Williams",
+      "acteur": "Sonequa Martin-Green",
+      "description": "Sœur de Tyreese, habile tireuse, courageuse et pragmatique."
+    }
+  ],
+  "Saison 4": [
+    {
+      "nom": "Bob Stookey",
+      "acteur": "Lawrence Gilliard Jr.",
+      "description": "Ancien médecin de l'armée et alcoolique repenti. Il rejoint le groupe à la prison et se lie d'amitié (et plus) avec Sasha. C'est un personnage empathique mais hanté par son passé."
+    },
+    {
+      "nom": "Lizzie Samuels",
+      "acteur": "Brighton Sharbino",
+      "description": "Jeune fille traumatisée, incapable de distinguer les vivants des morts. Elle développe une vision très troublante des rôdeurs."
+    },
+    {
+      "nom": "Mika Samuels",
+      "acteur": "Kyla Kenedy",
+      "description": "Petite sœur de Lizzie, plus douce et réaliste. Elle sert souvent de repère moral pour sa sœur."
+    },
+    {
+      "nom": "Ryan Samuels",
+      "acteur": "Victor McCay",
+      "description": "Père de Lizzie et Mika, brièvement présent au début de la saison, il meurt rapidement après une morsure."
+    },
+    {
+      "nom": "Patrick",
+      "acteur": "Vincent Martella",
+      "description": "Adolescent membre de la prison, ami de Carl. Il est la première victime de la mystérieuse épidémie à la prison."
+    },
+    {
+      "nom": "Tara Chambler",
+      "acteur": "Alanna Masterson",
+      "description": "Ancienne policière, rencontrée dans le camp du Gouverneur. Elle rejoint ensuite Rick et devient une membre fidèle du groupe."
+    },
+    {
+      "nom": "Lilly Chambler",
+      "acteur": "Audrey Marie Anderson",
+      "description": "Sœur de Tara. Elle a une fille (Meghan) et entretient une relation avec le Gouverneur."
+    },
+    {
+      "nom": "Meghan Chambler",
+      "acteur": "Meyrick Murphy",
+      "description": "Petite fille de Lilly, proche du Gouverneur pendant son arc de rédemption."
+    },
+    {
+      "nom": "Abraham Ford",
+      "acteur": "Michael Cudlitz",
+      "description": "Ancien sergent militaire, fort, déterminé et protecteur. Il a une mission : escorter Eugene à Washington D.C. Il devient un pilier du groupe par la suite."
+    },
+    {
+      "nom": "Eugene Porter",
+      "acteur": "Josh McDermitt",
+      "description": "Homme intelligent, mais manipulateur, prétendant connaître la cause de l'épidémie. Personnage clé pour les saisons suivantes."
+    },
+    {
+      "nom": "Rosita Espinosa",
+      "acteur": "Christian Serratos",
+      "description": "Compagne d'Abraham, débrouillarde et compétente. Présente également dans la série jusqu'à ses dernières saisons."
+    },
+    {
+      "nom": "Dr. Caleb Subramanian",
+      "acteur": "Sunkrish Bala",
+      "description": "Médecin de la prison qui tente de soigner les malades pendant l'épidémie interne."
+    },
+    {
+      "nom": "Alisha",
+      "acteur": "Juliana Harkavy",
+      "description": "Membre du groupe du Gouverneur, elle entretient une relation avec Tara."
+    }
+  ],
+  "Saison 5": [
+    {
+      "nom": "Gareth",
+      "acteur": "Andrew J. West",
+      "description": "Chef de Terminus. Froid, intelligent et manipulateur, il mène un groupe de cannibales qui attirent les survivants dans un piège."
+    },
+    {
+      "nom": "Mary",
+      "acteur": "Denise Crosby",
+      "description": "Membre de Terminus (vue dès la fin de la saison 4), accueillante en apparence, mais complice des horreurs du camp."
+    },
+    {
+      "nom": "Martin",
+      "acteur": "Chris Coy",
+      "description": "Autre membre de Terminus, impliqué dans la capture et la préparation des survivants."
+    },
+    {
+      "nom": "Père Gabriel Stokes",
+      "acteur": "Seth Gilliam",
+      "description": "Prêtre terrifié et coupable d'avoir abandonné sa congrégation aux rôdeurs. Il rejoint le groupe malgré la méfiance générale. Personnage central dans les saisons suivantes, entre foi et rédemption."
+    },
+    {
+      "nom": "Aaron",
+      "acteur": "Ross Marquand",
+      "description": "Recruteur d'Alexandria, bienveillant et diplomate. Il est le premier à approcher Rick et son groupe. Devient un pilier moral et un excellent éclaireur du groupe."
+    },
+    {
+      "nom": "Eric Raleigh",
+      "acteur": "Jordan Woods-Robinson",
+      "description": "Partenaire et compagnon d'Aaron. Loyal, courageux, mais souvent inquiet pour Aaron."
+    },
+    {
+      "nom": "Deanna Monroe",
+      "acteur": "Tovah Feldshuh",
+      "description": "Ancienne politicienne et dirigeante d'Alexandria. Visionnaire, elle veut reconstruire la société civilisée derrière les murs."
+    },
+    {
+      "nom": "Reg Monroe",
+      "acteur": "Steve Coulter",
+      "description": "Mari de Deanna, ingénieur civil qui a conçu les murs de la communauté. Calme et réfléchi."
+    },
+    {
+      "nom": "Jessie Anderson",
+      "acteur": "Alexandra Breckenridge",
+      "description": "Habitante d'Alexandria, mariée à Pete et mère de Ron et Sam. Elle se rapproche de Rick."
+    },
+    {
+      "nom": "Pete Anderson",
+      "acteur": "Corey Brill",
+      "description": "Mari violent de Jessie, médecin d'Alexandria. Sa relation avec Rick devient explosive."
+    },
+    {
+      "nom": "Ron Anderson",
+      "acteur": "Austin Abrams",
+      "description": "Fils adolescent de Jessie et Pete, d'abord ami de Carl, il développera plus tard de la rancune envers Rick."
+    },
+    {
+      "nom": "Sam Anderson",
+      "acteur": "Major Dodson",
+      "description": "Petit frère de Ron, innocent et sensible, il est traumatisé par la brutalité du monde extérieur."
+    },
+    {
+      "nom": "Nicholas",
+      "acteur": "Michael Traynor",
+      "description": "Résident d'Alexandria, lâche et égoïste, souvent en conflit avec Glenn. Devient un élément dramatique majeur dans la saison suivante."
+    },
+    {
+      "nom": "Aiden Monroe",
+      "acteur": "Daniel Bonjour",
+      "description": "Fils de Deanna, membre d'une équipe d'exploration d'Alexandria. Imprudent et arrogant."
+    }
+  ],
+  "Saison 6": [
+    {
+      "nom": "Denise Cloyd",
+      "acteur": "Merritt Wever",
+      "description": "Médecin d'Alexandria, remplaçante de Pete. Maladroite mais courageuse, elle gagne en assurance et entame une relation avec Tara."
+    },
+    {
+      "nom": "Spencer Monroe",
+      "acteur": "Austin Nichols",
+      "description": "Fils de Deanna et Reg. Arrogant et égoïste, il a une relation complexe avec Rick et ses décisions."
+    },
+    {
+      "nom": "Paul \"Jesus\" Rovia",
+      "acteur": "Tom Payne",
+      "description": "Éclaireur et négociateur de Hilltop, agile et rusé. Il joue un rôle clé dans la mise en relation entre Rick et la colonie. L'un des nouveaux favoris des fans."
+    },
+    {
+      "nom": "Gregory",
+      "acteur": "Xander Berkeley",
+      "description": "Dirigeant de Hilltop, politicien manipulateur et lâche. Il cherche à conserver le pouvoir, même au détriment des autres."
+    },
+    {
+      "nom": "Andy",
+      "acteur": "Jeremy Palko",
+      "description": "Membre de Hilltop, loyal à Gregory, il aide dans les échanges avec Alexandria."
+    },
+    {
+      "nom": "Cal",
+      "acteur": "James Chen",
+      "description": "Garde de Hilltop, discret mais fidèle à la communauté."
+    },
+    {
+      "nom": "Dwight",
+      "acteur": "Austin Amelio",
+      "description": "Membre des Sauveurs, marqué par une brûlure sur le visage. Il deviendra un personnage central, partagé entre loyauté et culpabilité."
+    },
+    {
+      "nom": "Sherry",
+      "acteur": "Christine Evangelista",
+      "description": "Épouse de Dwight, captive des Sauveurs. Son histoire se développera davantage plus tard."
+    },
+    {
+      "nom": "Wade",
+      "acteur": "Duke Jackson",
+      "description": "Lieutenant des Sauveurs, apparaît brièvement lors d'un affrontement avec Daryl et Sasha."
+    },
+    {
+      "nom": "Enid",
+      "acteur": "Katelyn Nacon",
+      "description": "Adolescente mystérieuse vivant à Alexandria, survivante solitaire (\"JSS\"). Elle se rapproche de Carl."
+    },
+    {
+      "nom": "Eastman",
+      "acteur": "John Carroll Lynch",
+      "description": "Homme solitaire qui sauve Morgan. Pacifiste, il lui apprend l'art de la non-violence et du combat au bâton."
+    }
+  ],
+  "Saison 7": [
+    {
+      "nom": "Negan",
+      "acteur": "Jeffrey Dean Morgan",
+      "description": "Chef charismatique, cruel et sadique des Sauveurs. Armé de sa batte \"Lucille\", il impose sa loi par la terreur. Un des antagonistes les plus emblématiques de toute la série."
+    },
+    {
+      "nom": "Simon",
+      "acteur": "Steven Ogg",
+      "description": "Bras droit de Negan, brutal et imprévisible. Il adore exercer le pouvoir et semer la peur."
+    },
+    {
+      "nom": "Arat",
+      "acteur": "Elizabeth Ludlow",
+      "description": "Membre loyale et redoutable des Sauveurs, exécutrice directe de Negan."
+    },
+    {
+      "nom": "Laura",
+      "acteur": "Lindsley Register",
+      "description": "Sauveuse haut placée, marquée par un tatouage au cou. Elle joue plus tard un rôle dans le conseil de Negan."
+    },
+    {
+      "nom": "Fat Joey / \"Joey le Gros\"",
+      "acteur": "Joshua Hoover",
+      "description": "Sauveur sympathique en apparence, souvent chargé de la logistique du Sanctuaire."
+    },
+    {
+      "nom": "Roi Ezekiel",
+      "acteur": "Khary Payton",
+      "description": "Chef théâtral et bienveillant du Royaume. Ancien gardien de zoo, il se fait appeler \"Roi\" et dirige son peuple avec sagesse. Accompagné de sa tigresse apprivoisée, Shiva."
+    },
+    {
+      "nom": "Shiva",
+      "acteur": "CGI",
+      "description": "Tigresse domestiquée par Ezekiel, symbole de puissance et de loyauté."
+    },
+    {
+      "nom": "Jerry",
+      "acteur": "Cooper Andrews",
+      "description": "Garde du corps et ami fidèle d'Ezekiel, jovial et toujours optimiste. Personnage très apprécié des fans."
+    },
+    {
+      "nom": "Richard",
+      "acteur": "Karl Makinen",
+      "description": "Soldat du Royaume, déterminé à combattre les Sauveurs, quitte à prendre des décisions dangereuses."
+    },
+    {
+      "nom": "Benjamin",
+      "acteur": "Logan Miller",
+      "description": "Jeune membre du Royaume, proche d'Ezekiel et de Morgan, idéaliste et brave."
+    },
+    {
+      "nom": "Daniel",
+      "acteur": "Daniel Newman",
+      "description": "Membre du Royaume, soldat secondaire dans les rangs d'Ezekiel."
+    },
+    {
+      "nom": "Natania",
+      "acteur": "Deborah May",
+      "description": "Chef d'Oceanside, méfiante et protectrice de son groupe composé uniquement de femmes."
+    },
+    {
+      "nom": "Cyndie",
+      "acteur": "Sydney Park",
+      "description": "Petite-fille de Natania, plus ouverte et compatissante. Elle aide Tara et s'oppose à la violence aveugle."
+    },
+    {
+      "nom": "Beatrice",
+      "acteur": "Briana Venskus",
+      "description": "Guerrière d'Oceanside, loyale à Natania, mais pragmatique."
+    },
+    {
+      "nom": "Mark",
+      "acteur": "Griffin Freeman",
+      "description": "Membre des Sauveurs, puni sévèrement par Negan (marqué au fer rouge)."
+    },
+    {
+      "nom": "Amber",
+      "acteur": "Autumn Dial",
+      "description": "Une des \"épouses\" de Negan, victime du système mis en place au Sanctuaire."
+    }
+  ],
+  "Saison 8": [
+    {
+      "nom": "Siddiq",
+      "acteur": "Avi Nash",
+      "description": "Médecin autodidacte rencontré par Carl. C'est pour lui que Carl se sacrifie, et il deviendra ensuite le médecin du groupe. Inspiré du personnage du même nom dans les comics."
+    },
+    {
+      "nom": "Alden",
+      "acteur": "Callan McAuliffe",
+      "description": "Ancien Sauveur capturé par Maggie à Hilltop. Il finit par changer de camp et devient un membre loyal de la communauté."
+    },
+    {
+      "nom": "Georgie",
+      "acteur": "Jayne Atkinson",
+      "description": "Femme mystérieuse qui rencontre Maggie et lui propose un échange de connaissances techniques en échange de ressources. Présente brièvement mais symbolise la reconstruction post-guerre."
+    },
+    {
+      "nom": "Marco",
+      "acteur": "Gustavo Gomez",
+      "description": "Membre de Hilltop, compagnon d'Alden, souvent vu comme éclaireur et combattant."
+    },
+    {
+      "nom": "Dianne",
+      "acteur": "Kerry Cahill",
+      "description": "Archère du Royaume, fidèle soldate d'Ezekiel, souvent présente lors des batailles majeures."
+    },
+    {
+      "nom": "Bruce",
+      "acteur": "Ken Arnold",
+      "description": "Résident d'Alexandria ou du Royaume, présent dans les combats de l'alliance."
+    },
+    {
+      "nom": "Regina",
+      "acteur": "Traci Dinwiddie",
+      "description": "Officière haut placée du Sanctuaire, cruelle et fidèle à Negan jusqu'à la fin de la guerre."
+    },
+    {
+      "nom": "Gary",
+      "acteur": "Mike Seal",
+      "description": "Sauveur loyal de Negan, participe activement aux affrontements contre Hilltop et Alexandria."
+    },
+    {
+      "nom": "Dean",
+      "acteur": "Adam Cronan",
+      "description": "Sauveur brutal, impliqué dans plusieurs attaques contre les survivants."
+    },
+    {
+      "nom": "Jared",
+      "acteur": "Joshua Mikel",
+      "description": "Membre agressif et arrogant des Sauveurs, connu pour provoquer Morgan et Ezekiel. Un des antagonistes secondaires les plus détestés de la saison."
+    },
+    {
+      "nom": "Kal",
+      "description": "Devient un garde plus présent dans la défense de Hilltop."
+    },
+    {
+      "nom": "Eduardo",
+      "acteur": "Peter Zimmerman",
+      "description": "Garde de Hilltop, loyal à Maggie et protecteur de la colonie."
+    }
+  ],
+  "Saison 9": [
+    {
+      "nom": "Magna",
+      "acteur": "Nadia Hilker",
+      "description": "Ancienne détenue devenue leader d'un petit groupe de survivants. Méfiante mais courageuse, elle rejoint Hilltop après le saut temporel."
+    },
+    {
+      "nom": "Yumiko",
+      "acteur": "Eleanor Matsuura",
+      "description": "Compagne et bras droit de Magna, archère et stratège. Calme, intelligente et loyale."
+    },
+    {
+      "nom": "Connie",
+      "acteur": "Lauren Ridloff",
+      "description": "Sœur de Kelly, sourde et experte en pistage. Sa manière de communiquer en langue des signes apporte une nouvelle dynamique."
+    },
+    {
+      "nom": "Kelly",
+      "acteur": "Angel Theory",
+      "description": "Sœur cadette de Connie, protectrice et combative. Elle maîtrise bien le tir à distance."
+    },
+    {
+      "nom": "Luke",
+      "acteur": "Dan Fogler",
+      "description": "Ancien professeur de musique, optimiste et cultivé. Il croit profondément à l'importance de l'art dans la survie de l'humanité."
+    },
+    {
+      "nom": "Bernie",
+      "acteur": "Ransone Kearney",
+      "description": "Membre de leur groupe vu brièvement au début, tué par les rôdeurs avant l'arrivée à Hilltop."
+    },
+    {
+      "nom": "Alpha",
+      "acteur": "Samantha Morton",
+      "description": "Chef des Chuchoteurs, groupe qui se déguise avec la peau des rôdeurs. Froide, cruelle et manipulatrice, elle impose une terreur absolue."
+    },
+    {
+      "nom": "Beta",
+      "acteur": "Ryan Hurst",
+      "description": "Second d'Alpha, géant masqué et fanatiquement loyal. Guerrier redoutable et symbole de la sauvagerie du groupe."
+    },
+    {
+      "nom": "Lydia",
+      "acteur": "Cassady McClincy",
+      "description": "Fille d'Alpha, élevée parmi les Chuchoteurs. Elle finit par se rapprocher de Daryl et Henry et remet en question la philosophie de sa mère."
+    },
+    {
+      "nom": "Gamma / Mary",
+      "acteur": "Thora Birch",
+      "description": "Membre importante des Chuchoteurs, qui commence à douter d'Alpha. Elle jouera un rôle clé dans la saison suivante."
+    },
+    {
+      "nom": "Earl Sutton",
+      "acteur": "John Finn",
+      "description": "Forgeron de Hilltop, mari de Tammy Rose. Personnage travailleur et courageux, dévoué à la communauté."
+    },
+    {
+      "nom": "Tammy Rose Sutton",
+      "acteur": "Brett Butler",
+      "description": "Épouse d'Earl, figure maternelle pour plusieurs orphelins du groupe."
+    },
+    {
+      "nom": "Rodney",
+      "acteur": "Joe Ando-Hirsh",
+      "description": "Jeune habitant de Hilltop, ami d'Addy et Henry."
+    },
+    {
+      "nom": "Addy",
+      "acteur": "Kelley Mack",
+      "description": "Adolescente de Hilltop, gentille et proche de Henry."
+    },
+    {
+      "nom": "Jed",
+      "acteur": "Rhys Coiro",
+      "description": "Ancien Sauveur rebelle, hostile à Rick et Carol après la guerre."
+    },
+    {
+      "nom": "Brandon Carver",
+      "acteur": "Blaine Kern III",
+      "description": "Fils d'un ancien Sauveur, admirateur de Negan, mais dangereux et instable."
+    },
+    {
+      "nom": "Justin",
+      "acteur": "Zach McGowan",
+      "description": "Ex-Sauveur intégré à Alexandrie, violent et provocateur."
+    }
+  ],
+  "Saison 10": [
+    {
+      "nom": "Negan",
+      "description": "Ancien antagoniste, il devient un allié clé dans la lutte contre Alpha."
+    },
+    {
+      "nom": "Gamma / Mary",
+      "description": "Déjà membre des Chuchoteurs, elle change de camp dans cette saison."
+    },
+    {
+      "nom": "Beta",
+      "description": "Second d'Alpha, reste un antagoniste majeur jusqu'à la fin."
+    },
+    {
+      "nom": "Frank",
+      "acteur": "Steve Coulter",
+      "description": "Nouveau soldat des Chuchoteurs, présent dans plusieurs embuscades."
+    },
+    {
+      "nom": "Juanita \"Princess\" Sanchez",
+      "acteur": "Paola Lázaro",
+      "description": "Personnage excentrique et fanfaron, survit seule depuis longtemps. Elle rejoint l'alliance contre les Chuchoteurs avec humour et énergie."
+    },
+    {
+      "nom": "Ricki / Felix",
+      "description": "Membres mineurs d'Alexandria et Hilltop impliqués dans les missions contre les Chuchoteurs."
+    },
+    {
+      "nom": "Kelly",
+      "description": "Introduite en saison 9, mais elle devient plus centrale cette saison, notamment avec Connie."
+    },
+    {
+      "nom": "Connie",
+      "description": "Toujours sourde, elle gagne en importance dans les opérations tactiques contre les Chuchoteurs."
+    },
+    {
+      "nom": "Dante",
+      "acteur": "Juan Javier Cardenas",
+      "description": "Médecin d'Alexandria, semble allié mais cache un lourd secret lié aux Chuchoteurs."
+    },
+    {
+      "nom": "Lydia",
+      "description": "Fille d'Alpha, apprend à vivre parmi les survivants après la mort de sa mère."
+    },
+    {
+      "nom": "Shiva",
+      "description": "Tigresse d'Ezekiel, symbolique dans la saison mais moins active dans le combat direct."
+    },
+    {
+      "nom": "Maggie",
+      "description": "De retour après la saison 9 pour défendre Hilltop et s'impliquer contre les Chuchoteurs."
+    }
+  ],
+  "Saison 11": [
+    {
+      "nom": "Pamela Milton",
+      "acteur": "Laila Robins",
+      "description": "Gouverneuse du Commonwealth, charismatique et autoritaire. Elle dirige la société avec des règles strictes et une hiérarchie complexe."
+    },
+    {
+      "nom": "Maxwell \"Max\" Milton",
+      "acteur": "Peter Jacobson",
+      "description": "Frère de Pamela, membre influent du Commonwealth, manipulateur politique."
+    },
+    {
+      "nom": "Mercer",
+      "acteur": "Michael James Shaw",
+      "description": "Chef de la milice du Commonwealth, loyal à Pamela mais également juste et honorable."
+    },
+    {
+      "nom": "Dante",
+      "description": "Médecin d'Alexandria, infiltré au Commonwealth pour des raisons personnelles."
+    },
+    {
+      "nom": "Stephanie",
+      "acteur": "Chelle Ramos",
+      "description": "Messagère mystérieuse du Commonwealth, prend contact avec Daryl et Carol. Elle joue un rôle clé dans l'ouverture des négociations entre groupes."
+    },
+    {
+      "nom": "Jules",
+      "acteur": "Paul Calderón",
+      "description": "Haut gradé du Commonwealth, impliqué dans la logistique et le maintien de l'ordre."
+    },
+    {
+      "nom": "Ricky / autres civils du Commonwealth",
+      "description": "Habitants secondaires qui représentent la population de cette vaste communauté."
+    },
+    {
+      "nom": "Maggie Greene",
+      "description": "Continue de diriger Hilltop et de s'impliquer dans la politique et la guerre contre le Commonwealth."
+    },
+    {
+      "nom": "Negan, Carol, Daryl, Judith, Gabriel, Aaron, Ezekiel",
+      "description": "Déjà présents, mais leur rôle se concentre sur l'intégration au Commonwealth et les conflits politiques."
+    },
+    {
+      "nom": "Raïs du Commonwealth et bureaucrates",
+      "description": "Divers officiers ou responsables qui défient Rick et les alliés, en mettant en avant la corruption et la bureaucratie."
+    },
+    {
+      "nom": "Petite opposition interne à Alexandria / Hilltop",
+      "description": "Des personnages mineurs qui contestent les décisions de Maggie, Carol ou Rick lors de l'intégration avec le Commonwealth."
+    }
+  ]
+}
