@@ -75,7 +75,11 @@ body {
   background: #333;
   transform: translateY(-2px);
 }
-
+#active-tab {
+  background: #555;
+  color: #fff;
+  font-weight: bold;
+}
 /* 
 =================================================================
       main panel ( open bar ( mais delete pas des choses ) )

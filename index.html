@@ -194,6 +194,13 @@
         mainPanel.appendChild(navContainer);
       }
     })();
+    const currentSeason = params.get("page");
+if (currentSeason && currentSeason.startsWith("s")) {
+  const link = document.querySelector(`.dropdown a[href='?page=${currentSeason}']`);
+  if (link) {
+link.id = "active-tab";
+  }
+}
   </script>
 </body>
 </html>
