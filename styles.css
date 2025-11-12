@@ -238,3 +238,16 @@ a {
   width: 100%;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
+#actor-profile {
+  background-color : rgba(51, 51, 51, 0.2);
+  margin: 10px;
+  width: fit-content;
+  height: 100%;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+#actor-profile:hover {
+  box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2);
+  transition : all 0.2s ease;
+}
