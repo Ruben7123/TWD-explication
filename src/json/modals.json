@@ -6,31 +6,31 @@
         "actor": "Rick Grimes",
         "quickdescription": "Le protagoniste principal",
         "fulldescription": "Rick Grimes est un ancien shérif adjoint qui se réveille d'un coma pour découvrir un monde ravagé par une apocalypse zombie...",
-        "img": "src/img/s01/rick.jpg"
+        "img": "src/img/s01/casting/rick.jpg"
       },
       {
         "actor": "Shane Walsh",
         "quickdescription": "Meilleur ami de Rick",
         "fulldescription": "Shane est le meilleur ami de Rick Grimes avant l'apocalypse et adjoint du shérif...",
-        "img": "src/img/s01/shane.jpg"
+        "img": "src/img/s01/casting/shane.jpg"
       },
       {
         "actor": "Glenn Rhee",
         "quickdescription": "A la base c'etait un livreur de pizzas",
         "fulldescription": "Glenn Rhee est un ancien livreur de pizzas qui devient un membre essentiel du groupe...",
-        "img": "src/img/s01/gleen.jpg"
+        "img": "src/img/s01/casting/gleen.jpg"
       },
       {
         "actor": "Daryl Dixon",
         "quickdescription": "Chasseur et pisteur",
         "fulldescription": "Daryl Dixon est un chasseur et pisteur habile, connu pour son habileté avec une arbalète...",
-        "img": "src/img/s01/daryl.jpg"
+        "img": "src/img/s01/casting/daryl.jpg"
       },
       {
         "actor": "Lori Grimes",
         "quickdescription": "Epouse de Rick",
         "fulldescription": "Lori Grimes est l'épouse de Rick Grimes et la mère de Carl",
-        "img": "src/img/s01/lori.webp"
+        "img": "src/img/s01/casting/lori.webp"
       }
     ]
   },
@@ -41,31 +41,31 @@
         "actor": "Hershel Greene",
         "quickdescription": "Un fermier et veterinaire",
         "fulldescription": "Hershel Greene est un fermier et vétérinaire qui offre refuge au groupe de survivants dans son ranch, il est le pere de Maggie et Beth...",
-        "img": "src/img/s02/hershel.jpg"
+        "img": "src/img/s02/casting/hershel.jpg"
       },
       {
         "actor": "Maggie Greene",
         "quickdescription": "Fille d'Hershel",
         "fulldescription": "Maggie Greene est la fille d'Hershel, elle s'atache rapidement à Glenn...",
-        "img": "src/img/s02/maggie.jpg"
+        "img": "src/img/s02/casting/maggie.jpg"
       },
       {
         "actor": "Carl",
         "quickdescription": "Le fils de Rick et Lori",
         "fulldescription": "Carl est le fils de Rick et Lori, il prend Shane comme figure paternelle...",
-        "img": "src/img/s02/carl.jpg"
+        "img": "src/img/s02/casting/carl.jpg"
       },
       {
         "actor": "Dale Horvath",
         "quickdescription": "Un homme agé du groupe de Atlanta",
         "fulldescription": "Dale est un homme âgé qui apporte sagesse et moralité au groupe... et sourtout un camping car.",
-        "img": "src/img/s02/dale.webp"
+        "img": "src/img/s02/casting/dale.webp"
       },
       {
       "actor": "michone",
       "quickdescription": "La guerre au Katana",
       "fulldescription": "Michonne est une guerriere redoutable maniant un katana, elle rejoint le groupe apres avoir sauvé Andrea...",
-      "img": "src/img/s02/michone.jpg"
+      "img": "src/img/s02/casting/michone.jpg"
       }
     ]
   }
