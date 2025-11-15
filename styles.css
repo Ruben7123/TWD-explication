@@ -316,7 +316,7 @@ a {
   inset: 0;
   padding: 2px; /* épaisseur de la bordure */
   border-radius: 20px;
-  background: linear-gradient(to bottom, #ffffff7e, #764ba2a4);
+  background: linear-gradient(-45deg, #ffffff9a, #764ba2b6);
   -webkit-mask:
     linear-gradient(#fff 0 0) content-box,
     linear-gradient(#fff 0 0);
@@ -324,7 +324,6 @@ a {
           mask-composite: exclude;
   pointer-events: none;
 }
-
 /* ANIMATION MODAL */
 @keyframes modalSlide {
   from { opacity: 0; transform: translateY(-30px); }
