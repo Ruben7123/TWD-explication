@@ -150,9 +150,14 @@ function generateActorCards(season) {
               <br>
               C'est sur ca que lepisode 1 se fini. Maintenant plus de doute le vrais danger est les rodeurs ?
               </p>
+              <div class="ccontainer">
+              <div class="pcontainer">
+                <p>Juste une question que je vais vous poser à chaque saison : qui sont les vrais dangers ?</p>
+              </div>
               <div class="choice-buttons">
-              <button class="choice-btn humain" onclick="sendChoice('s01','humain')">Humain</button> 
-              <button class="choice-btn rodeurs" onclick="sendChoice('s01','rodeurs')">Rôdeurs</button>
+              <button class="choice-btn" onclick="sendChoice(this, 's01','humain')">Humain</button> 
+              <button class="choice-btn" onclick="sendChoice(this, 's01','rodeurs')">Rôdeurs</button>
+              </div>
               </div>
             </div>
           `;
@@ -557,9 +562,20 @@ function addTooltips() {
     parent.replaceChild(frag, node);
   });
 }
-async function sendChoice(season, choice) {
+async function sendChoice(btn, season, choice) {
+  // Cherche tous les boutons dans le même container
+  const buttons = btn.parentElement.querySelectorAll(".choice-btn");
+  buttons.forEach(b => {
+    b.disabled = true;
+    b.classList.remove("selected");
+  });
+
+  // Met celui cliqué en vert
+  btn.classList.add("selected");
+
+  // Envoi à l'API
   try {
-    const res = await fetch("https://sheet-snt.vercel.app/.vercel.app/api/update", {
+    const res = await fetch("https://sheet-snt.vercel.app/api/update", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ season, choice })
@@ -570,6 +586,7 @@ async function sendChoice(season, choice) {
     console.error("Erreur:", err);
   }
 }
+
     renderPage();   
   </script>
 </body>
