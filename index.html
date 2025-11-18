@@ -2,7 +2,6 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>Placeholder</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Stack+Sans+Notch:wght@200..700&display=swap" rel="stylesheet">
@@ -42,10 +41,29 @@
   <script>
     const params = new URLSearchParams(window.location.search);
     const page = params.get("page") || "landing-page";
+    const titles = {
+  "landing-page": "Accueil",
+  "acteur": "Casting",
+  "lore": "Lore",
+  "amc": "AMC",
+  "s01": "Saison 1",
+  "s02": "Saison 2",
+  "s03": "Saison 3",
+  "s04": "Saison 4",
+  "s05": "Saison 5",
+  "s06": "Saison 6",
+  "s07": "Saison 7",
+  "s08": "Saison 8",
+  "s09": "Saison 9",
+  "s10": "Saison 10",
+  "s11": "Saison 11"
+};
+
+document.title = `formage fraise - ${titles[page] || "Inconnu"}`;
     const mainPanel = document.querySelector(".main_panel");
     let actorsData = [];
 
-    // Charger les données JSON
+
     async function loadActorsData() {
   try {
     const response = await fetch('src/json/modals.json');
@@ -55,7 +73,6 @@
   }
 }
 
-// Modifiez la fonction generateActorCards
 function generateActorCards(season) {
   const seasonData = actorsData.find(s => s.season === season);
   if (!seasonData || !seasonData.actors.length) {
@@ -575,7 +592,7 @@ async function sendChoice(btn, season, choice) {
 
   // Met celui cliqué en vert
   btn.classList.add("selected");
-
+  document.title = `formage fraise - ${page}`;
   // Envoi à l'API
   try {
     const res = await fetch("https://sheet-snt.vercel.app/api/update", {
@@ -589,7 +606,6 @@ async function sendChoice(btn, season, choice) {
     console.error("Erreur:", err);
   }
 }
-
     renderPage();   
   </script>
 </body>
