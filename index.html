@@ -42,42 +42,41 @@
     const params = new URLSearchParams(window.location.search);
     const page = params.get("page") || "landing-page";
     const titles = {
-  "landing-page": "Accueil",
-  "acteur": "Casting",
-  "lore": "Lore",
-  "amc": "AMC",
-  "s01": "Saison 1",
-  "s02": "Saison 2",
-  "s03": "Saison 3",
-  "s04": "Saison 4",
-  "s05": "Saison 5",
-  "s06": "Saison 6",
-  "s07": "Saison 7",
-  "s08": "Saison 8",
-  "s09": "Saison 9",
-  "s10": "Saison 10",
-  "s11": "Saison 11"
-};
+    "landing-page": "Accueil",
+    "acteur": "Casting",
+    "lore": "Lore",
+    "amc": "AMC",
+    "s01": "Saison 1",
+    "s02": "Saison 2",
+    "s03": "Saison 3",
+    "s04": "Saison 4",
+    "s05": "Saison 5",
+    "s06": "Saison 6",
+    "s07": "Saison 7",
+    "s08": "Saison 8",
+    "s09": "Saison 9",
+    "s10": "Saison 10",
+    "s11": "Saison 11"
+    };
 
-document.title = `formage fraise - ${titles[page] || "Inconnu"}`;
+    document.title = `formage fraise - ${titles[page] || "Inconnu"}`;
     const mainPanel = document.querySelector(".main_panel");
     let actorsData = [];
 
+        async function loadActorsData() {
+      try {
+        const response = await fetch('src/json/modals.json');
+        actorsData = await response.json();
+      } catch (error) {
+        console.error('❌ Erreur lors du chargement des données:', error);
+      }
+    } 
 
-    async function loadActorsData() {
-  try {
-    const response = await fetch('src/json/modals.json');
-    actorsData = await response.json();
-  } catch (error) {
-    console.error('❌ Erreur lors du chargement des données:', error);
-  }
-}
-
-function generateActorCards(season) {
-  const seasonData = actorsData.find(s => s.season === season);
-  if (!seasonData || !seasonData.actors.length) {
-    return '<p>Aucun acteur trouvé pour cette saison.</p>';
-  }
+  function generateActorCards(season) {
+    const seasonData = actorsData.find(s => s.season === season);
+    if (!seasonData || !seasonData.actors.length) {
+      return '<p>Aucun acteur trouvé pour cette saison.</p>';
+    }
 
   return seasonData.actors.map(actor => `
     <div class="actor-card" data-actor="${actor.actor}">
@@ -147,37 +146,39 @@ function generateActorCards(season) {
               <p>
 
               Ok <br>
-               Cette saison est la première. Il faut se forcer pour regarder les deux premiers épisodes, car c’est comme les dix premières pages d’un livre : importantes pour poser l’histoire, mais un peu longues. <br>
-               Elle plante ce décor précis : <br>
-               Rick, le protagoniste principal, est en intervention avec Shane (son meilleur ami). Ils sont là pour arrêter deux personnes — une mission de routine, non ? <br>
-               Eh bien pas vraiment : le central a annoncé deux suspects, mais une fois arrivés sur place, oui ils sont deux, mais lors de la fusillade un troisième apparaît et tire sur Rick, qui finit dans le coma.
-               On voit ensuite Shane qui va voir Lori à la sortie de l'école où elle était allée récupérer Carl — la femme de Rick — pour lui annoncer que Rick est à l’hôpital. <br>
-               Ensuite il y a un saut dans le temps. Avant de passer dans la tête de Rick, on voit Shane lui apporter des fleurs. Quelques semaines plus tard – environ un mois – Rick se réveille et remercie Shane pour les fleurs… problème : ça fait un mois que Shane est parti et que les fleurs ont fané. Il essaie de se lever et tombe sur cette porte :
+                Cette saison est la première. Il faut se forcer pour regarder les deux premiers épisodes, car c’est comme les dix premières pages d’un livre : importantes pour poser l’histoire, mais un peu longues. <br>
+                Elle plante ce décor précis : <br>
+                Rick, le protagoniste principal, est en intervention avec Shane (son meilleur ami). Ils sont là pour arrêter deux personnes — une mission de routine, non ? <br>
+                Eh bien pas vraiment : le central a annoncé deux suspects, mais une fois arrivés sur place, oui ils sont deux, mais lors de la fusillade un troisième apparaît et tire sur Rick, qui finit dans le coma.
+                On voit ensuite Shane qui va voir Lori à la sortie de l'école où elle était allée récupérer Carl — la femme de Rick — pour lui annoncer que Rick est à l’hôpital. <br>
+                Ensuite il y a un saut dans le temps. Avant de passer dans la tête de Rick, on voit Shane lui apporter des fleurs. Quelques semaines plus tard – environ un mois – Rick se réveille et remercie Shane pour les fleurs… problème : ça fait un mois que Shane est parti et que les fleurs ont fané. Il essaie de se lever et tombe sur cette porte :
               </p>
               <img src="src/img/s01/img4content/dodi.jpg" alt="porte" height="200">
               <p>
-              Au début il comprend pas, mais après avoir vu les mains de ce qui va être appelé plus tard les "Rodeurs", il comprend qu'il n'y a plus de retour en arrière. Cette affirmation va se confirmer un peu plus tard quand il sera accueilli très chaleureusement... à coup de pelle en pleine tête — on a connu mieux comme accueil.
+                Au début il comprend pas, mais après avoir vu les mains de ce qui va être appelé plus tard les "Rodeurs", il comprend qu'il n'y a plus de retour en arrière. Cette affirmation va se confirmer un peu plus tard quand il sera accueilli très chaleureusement... à coup de pelle en pleine tête — on a connu mieux comme accueil.
               <br>
-              Mais la ce n'est que l'episode 1, c'est plutot chill pour le moment, il as croiser 2-3 rodeurs non ?
+                Mais la ce n'est que l'episode 1, c'est plutot chill pour le moment, il as croiser 2-3 rodeurs non ?
               <br>
-              Pas vraiment car apres avoir rencontrer Morgan Jones ( le pere du gamins qui as assomer rick ) et que Morgan lui est dis que la base millitaire de Atlanta etait un lieu qui as servi a acceuilir des refugiers, rick se met en quete d'y trouver sa famille, mais comme dans l'univers la lois de murphie s'applique plus que ailleur apparaiment, et bah ca as mal tourner pour lui, et se retrouve dans atlanta qui est en ruine fasse a une horde de rodeurs – plusieurs centaines – et se cache alors dans un tank qui etait au millieu de la rue </p>
+                Pas vraiment car apres avoir rencontrer Morgan Jones ( le pere du gamins qui as assomer rick ) et que Morgan lui est dis que la base millitaire de Atlanta etait un lieu qui as servi a acceuilir des refugiers, rick se met en quete d'y trouver sa famille, mais comme dans l'univers la lois de murphie s'applique plus que ailleur apparaiment, et bah ca as mal tourner pour lui, et se retrouve dans atlanta qui est en ruine fasse a une horde de rodeurs – plusieurs centaines – et se cache alors dans un tank qui etait au millieu de la rue </p>
               <img src="src/img/s01/img4content/tank.jpg" alt="tank" height="200">
               <p>
-              Mais quand tout semble être perdu, parfois on a de la chance... Et c'est le cas de Rick Grimes, qui va alors être sauvé par Glenn, un ancien livreur de pizza qui lui dit par radio : "Eh toi, du con, toi dans le char, t'es à ton aise ?" Encore un accueil très chaleureux, mais parfois à mauvaise fortune bon cœur non ?
+                Mais quand tout semble être perdu, parfois on a de la chance... Et c'est le cas de Rick Grimes, qui va alors être sauvé par Glenn, un ancien livreur de pizza qui lui dit par radio : "Eh toi, du con, toi dans le char, t'es à ton aise ?" Encore un accueil très chaleureux, mais parfois à mauvaise fortune bon cœur non ?
               <br>
-              C'est sur ca que lepisode 1 se fini, <br> Dans l'épisode suivant Rick part chercher sa famille dans un camp de refugier a proximiter de Atlanta. <br>
-              Il y retrouve Shane, Lori, Carl et d'autre menbre du groupe qui plus tard vont se demarquer, c'est le cas de Daryl Dixon, Carol, et le frêre de Daryl : Merle Dixon, en quelque mots, c'est un raciste mais loyal.
+                C'est sur ca que lepisode 1 se fini, <br> Dans l'épisode suivant Rick part chercher sa famille dans un camp de refugier a proximiter de Atlanta. <br>
+                Il y retrouve Shane, Lori, Carl et d'autre menbre du groupe qui plus tard vont se demarquer, c'est le cas de Daryl Dixon, Carol, et le frêre de Daryl : Merle Dixon, en quelque mots, c'est un raciste mais loyal.
               <br>
               
               </p>
               <div class="ccontainer">
               <div class="pcontainer">
-                <p>Juste une question que je vais vous poser à chaque saison : qui sont les vrais dangers ?</p>
+                <p>
+                  Juste une question que je vais vous poser à chaque saison : qui sont les vrais dangers ?
+                </p>
               </div>
-              <div class="choice-buttons">
-              <button class="choice-btn" onclick="sendChoice(this, 's01','humain')">Humain</button> 
-              <button class="choice-btn" onclick="sendChoice(this, 's01','rodeurs')">Rôdeurs</button>
-              </div>
+                <div class="choice-buttons">
+                  <button class="choice-btn" onclick="sendChoice(this, 's01','humain')">Humain</button> 
+                  <button class="choice-btn" onclick="sendChoice(this, 's01','rodeurs')">Rôdeurs</button>
+                </div>
               </div>
             </div>
           `;
