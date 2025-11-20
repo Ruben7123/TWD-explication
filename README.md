@@ -3,7 +3,7 @@
 ## Il se trouve ici
 
 En général :
-```` html
+```` js
 switch (page) {
         case "landing-page":
           mainPanel.innerHTML = `
