@@ -1,0 +1,388 @@
+[
+  {
+    "season": "s01",
+    "actors": [
+      {
+        "actor": "Rick Grimes",
+        "quickdescription": "Le protagoniste principal",
+        "fulldescription": "Rick Grimes est un ancien shérif adjoint qui se réveille d'un coma pour découvrir un monde ravagé par une apocalypse zombie...",
+        "img": "src/img/s01/casting/rick.jpg"
+      },
+      {
+        "actor": "Shane Walsh",
+        "quickdescription": "Meilleur ami de Rick",
+        "fulldescription": "Shane est le meilleur ami de Rick Grimes avant l'apocalypse et adjoint du shérif...",
+        "img": "src/img/s01/casting/shane.jpg"
+      },
+      {
+        "actor": "Glenn Rhee",
+        "quickdescription": "A la base c'etait un livreur de pizzas",
+        "fulldescription": "Glenn Rhee est un ancien livreur de pizzas qui devient un membre essentiel du groupe...",
+        "img": "src/img/s01/casting/gleen.jpg"
+      },
+      {
+        "actor": "Daryl Dixon",
+        "quickdescription": "Chasseur et pisteur",
+        "fulldescription": "Daryl Dixon est un chasseur et pisteur habile, connu pour son habileté avec une arbalète...",
+        "img": "src/img/s01/casting/daryl.jpg"
+      },
+      {
+        "actor": "Lori Grimes",
+        "quickdescription": "Epouse de Rick",
+        "fulldescription": "Lori Grimes est l'épouse de Rick Grimes et la mère de Carl",
+        "img": "src/img/s01/casting/lori.webp"
+      }
+    ]
+  },
+  {
+    "season": "s02",
+    "actors": [
+      {
+        "actor": "Hershel Greene",
+        "quickdescription": "Un fermier et veterinaire",
+        "fulldescription": "Hershel Greene est un fermier et vétérinaire qui offre refuge au groupe de survivants dans son ranch, il est le pere de Maggie et Beth...",
+        "img": "src/img/s02/casting/hershel.jpg"
+      },
+      {
+        "actor": "Maggie Greene",
+        "quickdescription": "Fille d'Hershel",
+        "fulldescription": "Maggie Greene est la fille d'Hershel, elle s'atache rapidement à Glenn...",
+        "img": "src/img/s02/casting/maggie.jpg"
+      },
+      {
+        "actor": "Carl",
+        "quickdescription": "Le fils de Rick et Lori",
+        "fulldescription": "Carl est le fils de Rick et Lori, il prend Shane comme figure paternelle...",
+        "img": "src/img/s02/casting/carl.jpg"
+      },
+      {
+        "actor": "Dale Horvath",
+        "quickdescription": "Un homme agé du groupe de Atlanta",
+        "fulldescription": "Dale est un homme âgé qui apporte sagesse et moralité au groupe... et sourtout un camping car.",
+        "img": "src/img/s02/casting/dale.webp"
+      },
+      {
+      "actor": "michone",
+      "quickdescription": "La guerre au Katana",
+      "fulldescription": "Michonne est une guerriere redoutable maniant un katana, elle rejoint le groupe apres avoir sauvé Andrea...",
+      "img": "src/img/s02/casting/michone.jpg"
+      }
+    ]
+  },
+  
+  {
+    "season": "s03",
+    "actors": [
+      {
+        "actor": "The Governor",
+        "quickdescription": "Leader de Woodbury",
+        "fulldescription": "The Governor est le leader charismatique mais impitoyable de la ville fortifiée de Woodbury, obsédé par le pouvoir et la survie...",
+        "img": "src/img/s03/casting/governor.webp"
+      },
+      {
+        "actor": "Merle Dixon",
+        "quickdescription": "Frère de Daryl",
+        "fulldescription": "Merle Dixon est le frère aîné de Daryl, un survivant raciste et volatile qui sert de lieutenant au Governor avant de se racheter...",
+        "img": "src/img/s03/casting/merle.jpg"
+      },
+      {
+        "actor": "Andrea Harrison",
+        "quickdescription": "Avocate devenue survivante",
+        "fulldescription": "Andrea est une ancienne avocate des droits civils qui devient une tireuse d'élite, elle s'allie temporairement avec le Governor...",
+        "img": "src/img/s03/casting/andrea.jpg"
+      },
+      {
+        "actor": "Tyreese Williams",
+        "quickdescription": "Survivant fort et compatissant",
+        "fulldescription": "Tyreese est un survivant puissant armé d'un marteau, frère de Sasha, qui rejoint le groupe à la prison et apporte force et moralité...",
+        "img": "src/img/s03/casting/tyreese.jpg"
+      },
+      {
+        "actor": "Sasha Williams",
+        "quickdescription": "Sœur de Tyreese",
+        "fulldescription": "Sasha est la sœur de Tyreese, une ancienne pompière qui devient une tireuse experte et membre clé du groupe...",
+        "img": "src/img/s03/casting/sasha.jpg"
+      }
+    ]
+  },
+  {
+    "season": "s04",
+    "actors": [
+      {
+        "actor": "Abraham Ford",
+        "quickdescription": "Sergent de l'armée",
+        "fulldescription": "Abraham est un ancien sergent de l'armée déterminé à amener Eugene à Washington, croyant qu'il a un remède...",
+        "img": "src/img/s04/casting/abraham.jpg"
+      },
+      {
+        "actor": "Rosita Espinosa",
+        "quickdescription": "Partenaire d'Abraham",
+        "fulldescription": "Rosita est une survivante dure et compétente voyageant avec Abraham et Eugene, experte en combat...",
+        "img": "src/img/s04/casting/rosita.jpg"
+      },
+      {
+        "actor": "Eugene Porter",
+        "quickdescription": "Scientifique présumé",
+        "fulldescription": "Eugene prétend être un scientifique avec la clé pour guérir le virus zombie, utilisant cela pour sa protection...",
+        "img": "src/img/s04/casting/eugene.jpg"
+      },
+      {
+        "actor": "Tara Chambler",
+        "quickdescription": "Étudiante en académie de police",
+        "fulldescription": "Tara fait partie du nouveau groupe du Governor mais change de camp et rejoint les survivants de Rick...",
+        "img": "src/img/s04/casting/tara.jpg"
+      },
+      {
+        "actor": "Bob Stookey",
+        "quickdescription": "Médecin alcoolique",
+        "fulldescription": "Bob est un ancien médecin de l'armée luttant contre l'alcoolisme, qui rejoint le groupe à la prison...",
+        "img": "src/img/s04/casting/bob.jpg"
+      }
+    ]
+  },
+  {
+    "season": "s05",
+    "actors": [
+      {
+        "actor": "Gabriel Stokes",
+        "quickdescription": "Prêtre lâche",
+        "fulldescription": "Le père Gabriel est un prêtre qui a verrouillé ses paroissiens dehors pendant l'apocalypse, rejoignant le groupe avec culpabilité...",
+        "img": "src/img/s05/casting/gabriel.jpg"
+      },
+      {
+        "actor": "Aaron",
+        "quickdescription": "Recruteur d'Alexandria",
+        "fulldescription": "Aaron est un recruteur amical pour la zone sûre d'Alexandria, invitant le groupe de Rick à les rejoindre...",
+        "img": "src/img/s05/casting/aaron.jpg"
+      },
+      {
+        "actor": "Deanna Monroe",
+        "quickdescription": "Leader d'Alexandria",
+        "fulldescription": "Deanna est une ancienne congresswoman dirigeant la communauté protégée d'Alexandria...",
+        "img": "src/img/s05/casting/deanna.jpg"
+      },
+      {
+        "actor": "Jessie Anderson",
+        "quickdescription": "Résidente d'Alexandria",
+        "fulldescription": "Jessie est une femme battue vivant à Alexandria, qui forme une relation avec Rick...",
+        "img": "src/img/s05/casting/jessie.jpg"
+      },
+      {
+        "actor": "Enid",
+        "quickdescription": "Adolescente mystérieuse",
+        "fulldescription": "Enid est une ado solitaire à Alexandria qui s'échappe souvent des murs et se lie avec Carl...",
+        "img": "src/img/s05/casting/enid.jpg"
+      }
+    ]
+  },
+  {
+    "season": "s06",
+    "actors": [
+      {
+        "actor": "Paul Rovia",
+        "quickdescription": "Scout de Hilltop",
+        "fulldescription": "Paul 'Jesus' Rovia est un artiste martial et scout pour la colonie de Hilltop, aidant à connecter les communautés...",
+        "img": "src/img/s06/casting/jesus.jpg"
+      },
+      {
+        "actor": "Gregory",
+        "quickdescription": "Leader égoïste de Hilltop",
+        "fulldescription": "Gregory est le leader lâche et égoïste de Hilltop, soumis aux Saviors...",
+        "img": "src/img/s06/casting/gregory.jpg"
+      },
+      {
+        "actor": "Dwight",
+        "quickdescription": "Lieutenant des Saviors",
+        "fulldescription": "Dwight est un Savior au visage brûlé qui déserte plus tard pour aider Rick...",
+        "img": "src/img/s06/casting/dwight.jpg"
+      },
+      {
+        "actor": "Negan",
+        "quickdescription": "Leader des Saviors",
+        "fulldescription": "Negan est le leader charismatique et violent des Saviors, armé d'une batte appelée Lucille...",
+        "img": "src/img/s06/casting/negan.jpg"
+      },
+      {
+        "actor": "Morgan Jones",
+        "quickdescription": "Survivant au bâton",
+        "fulldescription": "Morgan est un vieil ami de Rick qui adopte une philosophie de non-violence avant de rejoindre le combat...",
+        "img": "src/img/s06/casting/morgan.jpg"
+      }
+    ]
+  },
+  {
+    "season": "s07",
+    "actors": [
+      {
+        "actor": "Ezekiel",
+        "quickdescription": "Roi du Kingdom",
+        "fulldescription": "Le Roi Ezekiel dirige le Kingdom avec son tigre Shiva, un leader théâtral et bienveillant...",
+        "img": "src/img/s07/casting/ezekiel.jpg"
+      },
+      {
+        "actor": "Jerry",
+        "quickdescription": "Conseiller d'Ezekiel",
+        "fulldescription": "Jerry est l'aide loyal et joyeux du Roi Ezekiel, toujours prêt à aider...",
+        "img": "src/img/s07/casting/jerry.jpg"
+      },
+      {
+        "actor": "Simon",
+        "quickdescription": "Bras droit de Negan",
+        "fulldescription": "Simon est un enforcer brutal des Saviors, ambitieux et sadique...",
+        "img": "src/img/s07/casting/simon.jpg"
+      },
+      {
+        "actor": "Jadis",
+        "quickdescription": "Leader des Scavengers",
+        "fulldescription": "Jadis dirige les Scavengers, un groupe vivant dans une décharge, avec un langage unique...",
+        "img": "src/img/s07/casting/jadis.jpg"
+      },
+      {
+        "actor": "Alden",
+        "quickdescription": "Savior repenti",
+        "fulldescription": "Alden est un ancien Savior qui se rend et rejoint Hilltop...",
+        "img": "src/img/s07/casting/alden.jpg"
+      }
+    ]
+  },
+  {
+    "season": "s08",
+    "actors": [
+      {
+        "actor": "Siddiq",
+        "quickdescription": "Médecin musulman",
+        "fulldescription": "Siddiq est un survivant médical sauvé par Carl, qui devient le docteur d'Alexandria...",
+        "img": "src/img/s08/casting/siddiq.jpg"
+      },
+      {
+        "actor": "Georgie",
+        "quickdescription": "Voyageuse mystérieuse",
+        "fulldescription": "Georgie est une voyageuse offrant des connaissances en échange de ressources, inspirant Maggie...",
+        "img": "src/img/s08/casting/georgie.jpg"
+      },
+      {
+        "actor": "Cyndie",
+        "quickdescription": "Leader d'Oceanside",
+        "fulldescription": "Cyndie dirige la communauté d'Oceanside après la mort de sa grand-mère...",
+        "img": "src/img/s08/casting/cyndie.jpg"
+      },
+      {
+        "actor": "Henry",
+        "quickdescription": "Fils adoptif de Carol",
+        "fulldescription": "Henry est un jeune garçon adopté par Ezekiel et Carol, grandissant dans le Kingdom...",
+        "img": "src/img/s08/casting/henry.jpg"
+      },
+      {
+        "actor": "Aaron",
+        "quickdescription": "Adoptif d'un bébé",
+        "fulldescription": "Aaron élève un bébé sauvé et continue à recruter pour Alexandria...",
+        "img": "src/img/s08/casting/aaron.jpg"
+      }
+    ]
+  },
+  {
+    "season": "s09",
+    "actors": [
+      {
+        "actor": "Alpha",
+        "quickdescription": "Leader des Whisperers",
+        "fulldescription": "Alpha dirige les Whisperers, un groupe se déguisant en zombies, impitoyable et primitive...",
+        "img": "src/img/s09/casting/alpha.jpg"
+      },
+      {
+        "actor": "Beta",
+        "quickdescription": "Second d'Alpha",
+        "fulldescription": "Beta est l'exécuteur massif et loyal d'Alpha, portant un masque de peau de zombie...",
+        "img": "src/img/s09/casting/beta.jpg"
+      },
+      {
+        "actor": "Lydia",
+        "quickdescription": "Fille d'Alpha",
+        "fulldescription": "Lydia est la fille d'Alpha qui déserte les Whisperers pour rejoindre les communautés...",
+        "img": "src/img/s09/casting/lydia.jpg"
+      },
+      {
+        "actor": "Judith Grimes",
+        "quickdescription": "Fille de Rick",
+        "fulldescription": "Judith est la fille de Rick et Michonne, grandissant intelligente et courageuse...",
+        "img": "src/img/s09/casting/judith.jpg"
+      },
+      {
+        "actor": "Connie",
+        "quickdescription": "Journaliste sourde",
+        "fulldescription": "Connie est une journaliste sourde qui rejoint le groupe avec sa sœur Kelly...",
+        "img": "src/img/s09/casting/connie.jpg"
+      }
+    ]
+  },
+  {
+    "season": "s10",
+    "actors": [
+      {
+        "actor": "Magna",
+        "quickdescription": "Leader d'un petit groupe",
+        "fulldescription": "Magna dirige un petit groupe de survivants qui rejoignent Hilltop...",
+        "img": "src/img/s10/casting/magna.jpg"
+      },
+      {
+        "actor": "Yumiko",
+        "quickdescription": "Avocate et archère",
+        "fulldescription": "Yumiko est une avocate devenue archère, petite amie de Magna...",
+        "img": "src/img/s10/casting/yumiko.jpg"
+      },
+      {
+        "actor": "Kelly",
+        "quickdescription": "Sœur de Connie",
+        "fulldescription": "Kelly est la sœur protectrice de Connie, perdant progressivement l'audition...",
+        "img": "src/img/s10/casting/kelly.jpg"
+      },
+      {
+        "actor": "Luke",
+        "quickdescription": "Professeur de musique",
+        "fulldescription": "Luke est un ancien professeur de musique, optimiste et membre du groupe de Magna...",
+        "img": "src/img/s10/casting/luke.jpg"
+      },
+      {
+        "actor": "Virgil",
+        "quickdescription": "Survivant insulaire",
+        "fulldescription": "Virgil est un survivant vivant sur une île, cherchant de l'aide pour sa famille...",
+        "img": "src/img/s10/casting/virgil.jpg"
+      }
+    ]
+  },
+  {
+    "season": "s11",
+    "actors": [
+      {
+        "actor": "Lance Hornsby",
+        "quickdescription": "Dirigeant du Commonwealth",
+        "fulldescription": "Lance est un dirigeant ambitieux du Commonwealth, manipulant pour le pouvoir...",
+        "img": "src/img/s11/casting/lance.jpg"
+      },
+      {
+        "actor": "Pamela Milton",
+        "quickdescription": "Gouverneure du Commonwealth",
+        "fulldescription": "Pamela est la gouverneure élite du Commonwealth, issue d'une famille politique...",
+        "img": "src/img/s11/casting/pamela.jpg"
+      },
+      {
+        "actor": "Princess",
+        "quickdescription": "Survivante excentrique",
+        "fulldescription": "Princess est une survivante solitaire et quirky qui rejoint Eugene et les autres...",
+        "img": "src/img/s11/casting/princess.jpg"
+      },
+      {
+        "actor": "Max Mercer",
+        "quickdescription": "Sœur de Mercer",
+        "fulldescription": "Max est une espionne dans le Commonwealth, aidant à révéler la corruption...",
+        "img": "src/img/s11/casting/max.jpg"
+      },
+      {
+        "actor": "Mercer",
+        "quickdescription": "Général du Commonwealth",
+        "fulldescription": "Mercer est le général militaire du Commonwealth, qui se retourne contre les leaders corrompus...",
+        "img": "src/img/s11/casting/mercer.jpg"
+      }
+    ]
+  }
+]

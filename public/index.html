@@ -14,7 +14,7 @@
       <div class="element">
         <a>Saisons</a>
         <div class="dropdown">
-                    <a href ="?page=s01">Saison 1</a>
+          <a href ="../index.html?page=s01">Saison 1</a>
           <a href ="?page=s02">Saison 2</a>
           <a href ="?page=s03">Saison 3</a>
           <a href ="?page=s04">Saison 4</a>
@@ -22,15 +22,15 @@
           <a href ="?page=s06">Saison 6</a>
           <a href ="?page=s07">Saison 7</a>
           <a href ="?page=s08">Saison 8</a>
-          <a href ="?page=s09">Saison 9</a>
-          <a href ="?page=s10">Saison 10</a>
-          <a href ="?page=s11">Saison 11</a>
+          <a href ="../index.html?page=s09">Saison 9</a>
+          <a href ="../index.html?page=s10">Saison 10</a>
+          <a href ="../index.html?page=s11">Saison 11</a>
         </div>
         <a>En +</a>
         <div class="dropdown">
-          <a href ="?page=acteur">casting</a>
-          <a href ="?page=lore"> le lore ?</a>
-          <a href ="?page=amc"> AMC </a>
+          <a href ="../index.html?page=acteur">casting</a>
+          <a href ="../index.html?page=lore"> le lore ?</a>
+          <a href ="../index.html?page=amc"> AMC </a>
         </div>
       </div>
     </div>
@@ -43,11 +43,6 @@
     const params = new URLSearchParams(window.location.search);
     const page = params.get("page") || "landing-page";
     const titles = {
-    "landing-page": "Accueil",
-    "acteur": "Casting",
-    "lore": "Lore",
-    "amc": "AMC",
-    "s01": "Saison 1",
     "s02": "Saison 2",
     "s03": "Saison 3",
     "s04": "Saison 4",
@@ -55,18 +50,15 @@
     "s06": "Saison 6",
     "s07": "Saison 7",
     "s08": "Saison 8",
-    "s09": "Saison 9",
-    "s10": "Saison 10",
-    "s11": "Saison 11"
     };
 
-    document.title = `formage fraise - ${titles[page] || "Inconnu"}`;
+    document.title = `TWD - ${titles[page] || "Inconnu"}`;
     const mainPanel = document.querySelector(".main_panel");
     let actorsData = [];
 
         async function loadActorsData() {
       try {
-        const response = await fetch('src/json/modals.json');
+        const response = await fetch('../src/json/modals.json');
         actorsData = await response.json();
       } catch (error) {
         console.error('❌ Erreur lors du chargement des données:', error);
@@ -94,10 +86,101 @@
       await loadActorsData();
 
       switch (page) {
-        case "landing-page":
+        case "s02":
           mainPanel.innerHTML = `
-            <h1>Bienvenue sur le site The Walking Dead Explication</h1>
-            <p>Explorez les saisons, découvrez le casting et plongez dans le lore de la série.</p>
+            <h1 class="saison-header">Saison 2</h1>
+            <div class="casting-card">
+              <h2>Les personnages principaux :</h2>
+              <div class="casting">
+                ${generateActorCards('s02')}
+              </div>
+            </div>
+            <div class="content">
+              <h2 class="content-header">Résumé de la saison 2</h2>
+          `;
+          break;
+        case "s03":
+          mainPanel.innerHTML = `
+            <h1 class="saison-header">Saison 3</h1>
+            <div class="casting-card">
+              <h2>Les personnages principaux :</h2>
+              <div class="casting">
+                ${generateActorCards('s03')}
+              </div>
+            </div>
+            <div class="content">
+              <h2 class="content-header">Résumé de la saison 3</h2>
+            </div>
+          `;
+          break;
+        case "s04":
+          mainPanel.innerHTML = `
+            <h1 class="saison-header">Saison 4</h1>
+            <div class="casting-card">
+              <h2>Les personnages principaux :</h2>
+              <div class="casting">
+                ${generateActorCards('s04')}
+              </div>
+            </div>
+            <div class="content">
+              <h2 class="content-header">Résumé de la saison 4</h2>
+            </div>
+          `;
+          break;
+        case "s05":
+          mainPanel.innerHTML = `
+            <h1 class="saison-header">Saison 5</h1>
+            <div class="casting-card">
+              <h2>Les personnages principaux :</h2>
+              <div class="casting">
+                ${generateActorCards('s05')}
+              </div>
+            </div>
+            <div class="content">
+              <h2 class="content-header">Résumé de la saison 5</h2>
+            </div>
+          `;
+          break;
+        case "s06":
+          mainPanel.innerHTML = `
+            <h1 class="saison-header">Saison 6</h1>
+            <div class="casting-card">
+              <h2>Les personnages principaux :</h2>
+              <div class="casting">
+                ${generateActorCards('s06')}
+              </div>
+            </div>
+            <div class="content">
+              <h2 class="content-header">Résumé de la saison 6</h2>
+            </div>
+          `;
+          break;
+        case "s07":
+          mainPanel.innerHTML = `
+            <h1 class="saison-header">Saison 7</h1>
+            <div class="casting-card">
+              <h2>Les personnages principaux :</h2>
+              <div class="casting">
+                ${generateActorCards('s07')}
+              </div>
+            </div>
+            <div class="content">
+              <h2 class="content-header">Résumé de la saison 7</h2>
+            </div>
+          `;
+          break;
+        case "s08":
+          mainPanel.innerHTML = `
+            <h1 class="saison-header">Saison 8</h1>
+            <div class="casting-card">
+              <h2>Les personnages principaux :</h2>
+              <div class="casting">
+                ${generateActorCards('s08')}
+              </div>
+            </div>
+            <div class="content">
+              <h2 class="content-header">Résumé de la saison 8</h2>
+            </div>
           `;
           break;
 attachEventListeners();
@@ -135,15 +218,15 @@ attachEventListeners();
         const currentSeason = parseInt(page.slice(1));
         if (currentSeason > 1) {
           const prevPage = `s${String(currentSeason - 1).padStart(2, "0")}`;
-          navHTML += `<button class="prev-btn" onclick="window.location.href='?page=${prevPage}'"> <img src="src/img/back_arrow.svg" width="18" height="18"> Saison ${currentSeason - 1}</button>`;
+          navHTML += `<button class="prev-btn" onclick="window.location.href='?page=${prevPage}'"> <img src="../src/img/back_arrow.svg" width="18" height="18"> Saison ${currentSeason - 1}</button>`;
         } else {
           navHTML += `<button class="home-btn" onclick="window.location.href='?page=landing-page'">Accueil</button>`;
         }
         if (currentSeason < totalSeasons) {
           const nextPage = `s${String(currentSeason + 1).padStart(2, "0")}`;
-          navHTML += `<button class="next-btn" onclick="window.location.href='?page=${nextPage}'">Saison ${currentSeason + 1} <img src="src/img/arrow.svg" width="18" height="18"></button>`;
+          navHTML += `<button class="next-btn" onclick="window.location.href='?page=${nextPage}'">Saison ${currentSeason + 1} <img src="../src/img/arrow.svg" width="18" height="18"></button>`;
         } else {
-          navHTML += `<button class="home-btn" onclick="window.location.href='?page=landing-page'">Vers le casting</button>`;
+          navHTML += `<button class="home-btn" onclick="window.location.href='../index.html?page=acteur'">Vers le casting</button>`;
         }
 
         navContainer.innerHTML = navHTML;
