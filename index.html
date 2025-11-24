@@ -42,22 +42,22 @@
     const params = new URLSearchParams(window.location.search);
     const page = params.get("page") || "landing-page";
     const titles = {
-    "landing-page": "Accueil",
-    "acteur": "Casting",
-    "lore": "Lore",
-    "amc": "AMC",
-    "s01": "Saison 1",
-    "s09": "Saison 9",
-    "s10": "Saison 10",
-    "s11": "Saison 11",
-    "default": "404 - Page introuvable",
+      "landing-page": "Accueil",
+      "acteur": "Casting",
+      "lore": "Lore",
+      "amc": "AMC",
+      "s01": "Saison 1",
+      "s09": "Saison 9",
+      "s10": "Saison 10",
+      "s11": "Saison 11",
+      "default": "404 - Page introuvable",
     };
 
     document.title = `TWD - ${titles[page] || "Inconnu"}`;
     const mainPanel = document.querySelector(".main_panel");
     let actorsData = [];
 
-        async function loadActorsData() {
+    async function loadActorsData() {
       try {
         const response = await fetch('src/json/modals.json');
         actorsData = await response.json();
@@ -66,23 +66,44 @@
       }
     } 
 
-  function generateActorCards(season) {
-    const seasonData = actorsData.find(s => s.season === season);
-    if (!seasonData || !seasonData.actors.length) {
-      return '<p>Aucun acteur trouvé pour cette saison.</p>';
+    function generateActorCards(season) {
+      const seasonData = actorsData.find(s => s.season === season);
+      if (!seasonData || !seasonData.actors.length) {
+        return '<p>Aucun acteur trouvé pour cette saison.</p>';
+      }
+
+      return seasonData.actors.map(actor => `
+        <div class="actor-card" data-actor="${actor.actor}">
+          <div id="actor-profile">
+            <img src="${actor.img}" alt="${actor.actor}"/>
+            <h3>${actor.actor}</h3>
+            <p>${actor.quickdescription}</p>
+          </div>
+        </div>
+      `).join('');
     }
 
-  return seasonData.actors.map(actor => `
-    <div class="actor-card" data-actor="${actor.actor}">
-      <div id="actor-profile">
-        <img src="${actor.img}" alt="${actor.actor}"/>
-        <h3>${actor.actor}</h3>
-        <p>${actor.quickdescription}</p>
-      </div>
-    </div>
-  `).join('');
-}
+    function generateFullActorCards(season) {
+      const seasonData = actorsData.find(s => s.season === season);
+      if (!seasonData || !seasonData.actors.length) {
+        return '';
+      }
 
+      const seasonNumber = season.replace('s', '');
+      const header = `<h2 class="season-divider">Saison ${parseInt(seasonNumber)}</h2>`;
+
+      const cards = seasonData.actors.map(actor => `
+        <div class="actor-card" data-actor="${actor.actor}">
+          <div id="actor-profile">
+            <img src="${actor.img}" alt="${actor.actor}"/>
+            <h3>${actor.actor}</h3>
+            <p>${actor.quickdescription}</p>
+          </div>
+        </div>
+      `).join('');
+
+      return header + cards;
+    }
 
     async function renderPage() {
       await loadActorsData();
@@ -135,11 +156,11 @@
               <p>
 
               Ok <br>
-                Cette saison est la première. Il faut se forcer pour regarder les deux premiers épisodes, car c’est comme les dix premières pages d’un livre : importantes pour poser l’histoire, mais un peu longues. <br>
+                Cette saison est la première. Il faut se forcer pour regarder les deux premiers épisodes, car c'est comme les dix premières pages d'un livre : importantes pour poser l'histoire, mais un peu longues. <br>
                 Elle plante ce décor précis : <br>
                 Rick, le protagoniste principal, est en intervention avec Shane (son meilleur ami). Ils sont là pour arrêter deux personnes — une mission de routine, non ? <br>
                 Eh bien pas vraiment : le central a annoncé deux suspects, mais une fois arrivés sur place, oui ils sont deux, mais lors de la fusillade un troisième apparaît et tire sur Rick, qui finit dans le coma.
-                On voit ensuite Shane qui va voir Lori à la sortie de l'école où elle était allée récupérer Carl — la femme de Rick — pour lui annoncer que Rick est à l’hôpital. <br>
+                On voit ensuite Shane qui va voir Lori à la sortie de l'école où elle était allée récupérer Carl — la femme de Rick — pour lui annoncer que Rick est à l'hôpital. <br>
                 Ensuite il y a un saut dans le temps. Avant de passer dans la tête de Rick, on voit Shane lui apporter des fleurs. Quelques semaines plus tard – environ un mois – Rick se réveille et remercie Shane pour les fleurs… problème : ça fait un mois que Shane est parti et que les fleurs ont fané. Il essaie de se lever et tombe sur cette porte :
               </p>
               <img src="src/img/s01/img4content/dodi.jpg" alt="porte" height="200">
@@ -219,24 +240,17 @@
             <p>Contenu sur AMC.</p>
           `;
           break;
-          case "acteur":
-            mainPanel.innerHTML = `
-              <h1>Casting</h1>
-              <div class="casting">
-                ${generateFullActorCards('s01')}
-                ${generateFullActorCards('s02')}
-                ${generateFullActorCards('s03')}
-                ${generateFullActorCards('s04')}
-                ${generateFullActorCards('s05')}
-                ${generateFullActorCards('s06')}
-                ${generateFullActorCards('s07')}
-                ${generateFullActorCards('s08')}
-                ${generateFullActorCards('s09')}
-                ${generateFullActorCards('s10')}
-                ${generateFullActorCards('s11')}
-              </div>
-            `;
-            break;
+        case "acteur":
+          mainPanel.innerHTML = `
+            <h1>Casting</h1>
+            <div class="casting">
+              ${generateFullActorCards('s01')}
+              ${generateFullActorCards('s09')}
+              ${generateFullActorCards('s10')}
+              ${generateFullActorCards('s11')}
+            </div>
+          `;
+          break;
         default:
           mainPanel.innerHTML = `
             <h1>404 - Page introuvable</h1>
@@ -245,7 +259,6 @@
           break;
       }
 
-      // Attacher les événements après le rendu
       attachEventListeners();
       addTooltips();
     }
@@ -279,34 +292,37 @@
 
       if (page.startsWith("s")) {
         const currentSeason = parseInt(page.slice(1));
+        
+        // Bouton précédent ou accueil
         if (currentSeason > 1) {
           const prevPage = `s${String(currentSeason - 1).padStart(2, "0")}`;
-          navHTML += `<button class="prev-btn" onclick="window.location.href='?page=${prevPage}'"> <img src="src/img/back_arrow.svg" width="18" height="18"> Saison ${currentSeason - 1}</button>`;
+          navHTML += `<button class="prev-btn" onclick="window.location.href='?page=${prevPage}'">
+            <img src="src/img/back_arrow.svg" width="18" height="18"> Saison ${currentSeason - 1}
+          </button>`;
         } else {
           navHTML += `<button class="home-btn" onclick="window.location.href='?page=landing-page'">Accueil</button>`;
         }
+        
+        // Bouton suivant ou casting
         if (currentSeason < totalSeasons) {
-    const nextSeason = currentSeason + 1;
-    const nextPage = currentSeason === 1
-      ? "/public/index.html?page=s02"
-      : `s${String(nextSeason).padStart(2, '0')}`;
-
-    container.innerHTML = `
-      <button class="next-btn" onclick="window.location.href='?page=${nextPage}'">
-        Saison ${nextSeason}
-        <img src="src/img/arrow.svg" width="18" height="18" alt="Next">
-      </button>
-    `;
-  } else {
-    // When no more seasons → show "Vers le casting" button
-    container.innerHTML = `
-      <button class="home-btn" onclick="window.location.href='?page=acteur'">
-        Vers le casting
-      </button>
-    `;
-  }
+          const nextSeason = currentSeason + 1;
+          const nextPage = `s${String(nextSeason).padStart(2, '0')}`;
+          
+          // Si c'est s02, utiliser le chemin absolu
+          const nextHref = nextPage === 's02' 
+            ? '/public/index.html?page=s02' 
+            : `?page=${nextPage}`;
+          
+          navHTML += `<button class="next-btn" onclick="window.location.href='${nextHref}'">
+            Saison ${nextSeason}
+            <img src="src/img/arrow.svg" width="18" height="18" alt="Next">
+          </button>`;
+        } else {
+          navHTML += `<button class="home-btn" onclick="window.location.href='?page=acteur'">
+            Vers le casting
+          </button>`;
         }
-
+        
         navContainer.innerHTML = navHTML;
         mainPanel.appendChild(navContainer);
       }
@@ -320,30 +336,28 @@
         }
       }
 
-      // Attacher les modals
       refreshCastingModals();
+    }
 
     function attachModalToCasting() {
-  const actorCards = document.querySelectorAll(".actor-card");
-  actorCards.forEach(card => {
-    card.style.cursor = "pointer";
+      const actorCards = document.querySelectorAll(".actor-card");
+      actorCards.forEach(card => {
+        card.style.cursor = "pointer";
+        card.addEventListener("click", (e) => {
+          const actorName = card.getAttribute('data-actor');
+          
+          let actorInfo;
+          for (const season of actorsData) {
+            actorInfo = season.actors.find(a => a.actor === actorName);
+            if (actorInfo) break;
+          }
 
-    card.addEventListener("click", (e) => {
-      const actorName = card.getAttribute('data-actor');
-      
-      // Chercher l'acteur dans toutes les saisons
-      let actorInfo;
-      for (const season of actorsData) {
-        actorInfo = season.actors.find(a => a.actor === actorName);
-        if (actorInfo) break;
-      }
-
-      if (actorInfo) {
-        openModal(actorInfo);
-      }
-    });
-  });
-}
+          if (actorInfo) {
+            openModal(actorInfo);
+          }
+        });
+      });
+    }
 
     function openModal(actor) {
       let modal = document.getElementById("modal");
@@ -375,158 +389,160 @@
     function refreshCastingModals() {
       attachModalToCasting();
     }
-const tooltips = {
-  "Rick": "Shérif adjoint, leader du groupe",
-  "Rick Grimes": "Shérif adjoint, leader du groupe",
-  "Daryl": "Chasseur et traqueur expert à l’arbalète",
-  "Daryl Dixon": "Chasseur et traqueur expert à l’arbalète",
-  "Michonne": "Guerrière au katana",
-  "Michonne Hawthorne": "Guerrière au katana",
-  "Carol": "Combattante impitoyable et stratège",
-  "Carol Peletier": "Combattante impitoyable et stratège",
-  "Glenn": "Livreur de pizzas devenu explorateur courageux",
-  "Glenn Rhee": "Livreur de pizzas devenu explorateur courageux",
-  "Maggie": "Leader de Hilltop",
-  "Maggie Rhee": "Leader de Hilltop",
-  "Maggie Greene": "Leader de Hilltop",
-  "Negan": "Leader charismatique et brutal des Sauveurs",
-  "Negan Smith": "Leader charismatique et brutal des Sauveurs",
-  "Carl": "Fils de Rick",
-  "Carl Grimes": "Fils de Rick",
-  "Judith": "Fille de Rick et Michonne",
-  "Judith Grimes": "Fille de Rick et Michonne",
-  "Morgan": "Maître du bâton, « toute vie est précieuse »",
-  "Morgan Jones": "Maître du bâton, « toute vie est précieuse »",
-  "Lori": "Épouse de Rick",
-  "Lori Grimes": "Épouse de Rick",
-  "Shane": "Meilleur ami et rival de Rick",
-  "Shane Walsh": "Meilleur ami et rival de Rick",
-  "Andrea": "Tireuse d’élite",
-  "Dale": "Conscience morale du groupe",
-  "T-Dog": "Membre loyal du groupe d’Atlanta",
-  "Merle": "Frère aîné de Daryl",
-  "Merle Dixon": "Frère aîné de Daryl",
-  "Hershel": "Vétérinaire et patriarche",
-  "Hershel Greene": "Vétérinaire et patriarche",
-  "Beth": "Fille cadette d’Hershel, chanteuse",
-  "Beth Greene": "Fille cadette d’Hershel, chanteuse",
-  "Gouverneur": "Leader tyrannique de Woodbury",
-  "Le Gouverneur": "Leader tyrannique de Woodbury",
-  "Philip Blake": "Leader tyrannique de Woodbury",
-  "Sasha": "Tireuse d’élite",
-  "Sasha Williams": "Tireuse d’élite",
-  "Tyreese": "Force tranquille du groupe",
-  "Tyreese Williams": "Force tranquille du groupe",
-  "Abraham": "Sergent costaud et sarcastique",
-  "Abraham Ford": "Sergent costaud et sarcastique",
-  "Rosita": "Combattante et mère de Coco",
-  "Rosita Espinosa": "Combattante et mère de Coco",
-  "Eugene": "Scientifique mullet et fabricant de munitions",
-  "Eugène": "Scientifique mullet et fabricant de munitions",
-  "Eugene Porter": "Scientifique mullet et fabricant de munitions",
-  "Jesus": "Scout et combattant expert de Hilltop",
-  "Paul Rovia": "Scout et combattant expert de Hilltop",
-  "Ezekiel": "Roi du Royaume",
-  "Roi Ezekiel": "Roi du Royaume",
-  "Jerry": "Bras droit loyal et jovial d’Ezekiel",
-  "Alpha": "Leader des Chuchoteurs",
-  "Beta": "Bras droit massif d’Alpha",
-  "Lydia": "Fille d’Alpha",
-  "Gamma": "Espionne des Chuchoteurs (Mary)",
-  "Aaron": "Recruteur d’Alexandria",
-  "Gabriel": "Prêtre devenu guerrier",
-  "Gabriel Stokes": "Prêtre devenu guerrier",
-  "Princess": "Survivante excentrique et énergique",
-  "Juanita Sanchez": "Survivante excentrique et énergique",
-  "Pamela Milton": "Gouverneure du Commonwealth",
-  "Mercer": "Commandant de l’armée du Commonwealth",
-  "Lance Hornsby": "Bras droit manipulateur de Pamela",
-  "Alexandria": "Communauté fortifiée, refuge principal",
-  "La Zone sûre d’Alexandria": "Communauté fortifiée, refuge principal",
-  "Hilltop": "Colonie agricole dirigée un temps par Maggie",
-  "La Colline": "Colonie agricole dirigée un temps par Maggie",
-  "Le Royaume": "Communauté monarchique d’Ezekiel",
-  "Kingdom": "Communauté monarchique d’Ezekiel",
-  "Sanctuaire": "Base industrielle des Sauveurs",
-  "Le Sanctuaire": "Base industrielle des Sauveurs",
-  "Woodbury": "Ville fortifiée du Gouverneur",
-  "Terminus": "Piège mortel des cannibales",
-  "Commonwealth": "Immense cité de 50 000 habitants",
-  "Le Commonwealth": "Immense cité de 50 000 habitants",
-  "Prison": "Refuge du groupe saisons 3-4",
-  "La Prison": "Refuge du groupe saisons 3-4",
-  "Atlanta": "Ville d’origine, saison 1"
-};
 
-function addTooltips() {
-  const container = document.querySelector(".sum-content");
-  if (!container) return;
+    const tooltips = {
+      "Rick": "Shérif adjoint, leader du groupe",
+      "Rick Grimes": "Shérif adjoint, leader du groupe",
+      "Daryl": "Chasseur et traqueur expert à l'arbalète",
+      "Daryl Dixon": "Chasseur et traqueur expert à l'arbalète",
+      "Michonne": "Guerrière au katana",
+      "Michonne Hawthorne": "Guerrière au katana",
+      "Carol": "Combattante impitoyable et stratège",
+      "Carol Peletier": "Combattante impitoyable et stratège",
+      "Glenn": "Livreur de pizzas devenu explorateur courageux",
+      "Glenn Rhee": "Livreur de pizzas devenu explorateur courageux",
+      "Maggie": "Leader de Hilltop",
+      "Maggie Rhee": "Leader de Hilltop",
+      "Maggie Greene": "Leader de Hilltop",
+      "Negan": "Leader charismatique et brutal des Sauveurs",
+      "Negan Smith": "Leader charismatique et brutal des Sauveurs",
+      "Carl": "Fils de Rick",
+      "Carl Grimes": "Fils de Rick",
+      "Judith": "Fille de Rick et Michonne",
+      "Judith Grimes": "Fille de Rick et Michonne",
+      "Morgan": "Maître du bâton, « toute vie est précieuse »",
+      "Morgan Jones": "Maître du bâton, « toute vie est précieuse »",
+      "Lori": "Épouse de Rick",
+      "Lori Grimes": "Épouse de Rick",
+      "Shane": "Meilleur ami et rival de Rick",
+      "Shane Walsh": "Meilleur ami et rival de Rick",
+      "Andrea": "Tireuse d'élite",
+      "Dale": "Conscience morale du groupe",
+      "T-Dog": "Membre loyal du groupe d'Atlanta",
+      "Merle": "Frère aîné de Daryl",
+      "Merle Dixon": "Frère aîné de Daryl",
+      "Hershel": "Vétérinaire et patriarche",
+      "Hershel Greene": "Vétérinaire et patriarche",
+      "Beth": "Fille cadette d'Hershel, chanteuse",
+      "Beth Greene": "Fille cadette d'Hershel, chanteuse",
+      "Gouverneur": "Leader tyrannique de Woodbury",
+      "Le Gouverneur": "Leader tyrannique de Woodbury",
+      "Philip Blake": "Leader tyrannique de Woodbury",
+      "Sasha": "Tireuse d'élite",
+      "Sasha Williams": "Tireuse d'élite",
+      "Tyreese": "Force tranquille du groupe",
+      "Tyreese Williams": "Force tranquille du groupe",
+      "Abraham": "Sergent costaud et sarcastique",
+      "Abraham Ford": "Sergent costaud et sarcastique",
+      "Rosita": "Combattante et mère de Coco",
+      "Rosita Espinosa": "Combattante et mère de Coco",
+      "Eugene": "Scientifique mullet et fabricant de munitions",
+      "Eugène": "Scientifique mullet et fabricant de munitions",
+      "Eugene Porter": "Scientifique mullet et fabricant de munitions",
+      "Jesus": "Scout et combattant expert de Hilltop",
+      "Paul Rovia": "Scout et combattant expert de Hilltop",
+      "Ezekiel": "Roi du Royaume",
+      "Roi Ezekiel": "Roi du Royaume",
+      "Jerry": "Bras droit loyal et jovial d'Ezekiel",
+      "Alpha": "Leader des Chuchoteurs",
+      "Beta": "Bras droit massif d'Alpha",
+      "Lydia": "Fille d'Alpha",
+      "Gamma": "Espionne des Chuchoteurs (Mary)",
+      "Aaron": "Recruteur d'Alexandria",
+      "Gabriel": "Prêtre devenu guerrier",
+      "Gabriel Stokes": "Prêtre devenu guerrier",
+      "Princess": "Survivante excentrique et énergique",
+      "Juanita Sanchez": "Survivante excentrique et énergique",
+      "Pamela Milton": "Gouverneure du Commonwealth",
+      "Mercer": "Commandant de l'armée du Commonwealth",
+      "Lance Hornsby": "Bras droit manipulateur de Pamela",
+      "Alexandria": "Communauté fortifiée, refuge principal",
+      "La Zone sûre d'Alexandria": "Communauté fortifiée, refuge principal",
+      "Hilltop": "Colonie agricole dirigée un temps par Maggie",
+      "La Colline": "Colonie agricole dirigée un temps par Maggie",
+      "Le Royaume": "Communauté monarchique d'Ezekiel",
+      "Kingdom": "Communauté monarchique d'Ezekiel",
+      "Sanctuaire": "Base industrielle des Sauveurs",
+      "Le Sanctuaire": "Base industrielle des Sauveurs",
+      "Woodbury": "Ville fortifiée du Gouverneur",
+      "Terminus": "Piège mortel des cannibales",
+      "Commonwealth": "Immense cité de 50 000 habitants",
+      "Le Commonwealth": "Immense cité de 50 000 habitants",
+      "Prison": "Refuge du groupe saisons 3-4",
+      "La Prison": "Refuge du groupe saisons 3-4",
+      "Atlanta": "Ville d'origine, saison 1"
+    };
 
-  const keys = Object.keys(tooltips).sort((a, b) => b.length - a.length);
-  const pattern = keys.map(k => k.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')).join("|");
-  const regex = new RegExp(`(?<!\\p{L})(${pattern})(?!\\p{L})`, "giu");
+    function addTooltips() {
+      const container = document.querySelector(".sum-content");
+      if (!container) return;
 
-  const walker = document.createTreeWalker(container, NodeFilter.SHOW_TEXT, null, false);
-  const textNodes = [];
-  while (walker.nextNode()) textNodes.push(walker.currentNode);
+      const keys = Object.keys(tooltips).sort((a, b) => b.length - a.length);
+      const pattern = keys.map(k => k.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')).join("|");
+      const regex = new RegExp(`(?<!\\p{L})(${pattern})(?!\\p{L})`, "giu");
 
-  textNodes.forEach(node => {
-    const parent = node.parentNode;
-    if (parent.closest(".tooltip")) return;
+      const walker = document.createTreeWalker(container, NodeFilter.SHOW_TEXT, null, false);
+      const textNodes = [];
+      while (walker.nextNode()) textNodes.push(walker.currentNode);
 
-    const text = node.nodeValue;
-    if (!regex.test(text)) return;
-    regex.lastIndex = 0;
+      textNodes.forEach(node => {
+        const parent = node.parentNode;
+        if (parent.closest(".tooltip")) return;
 
-    const frag = document.createDocumentFragment();
-    let last = 0;
-    let m;
-    while ((m = regex.exec(text)) !== null) {
-      const start = m.index;
-      if (start > last) frag.appendChild(document.createTextNode(text.slice(last, start)));
+        const text = node.nodeValue;
+        if (!regex.test(text)) return;
+        regex.lastIndex = 0;
 
-      const word = m[1];
-      const key = keys.find(k => k.toLowerCase() === word.toLowerCase());
+        const frag = document.createDocumentFragment();
+        let last = 0;
+        let m;
+        while ((m = regex.exec(text)) !== null) {
+          const start = m.index;
+          if (start > last) frag.appendChild(document.createTextNode(text.slice(last, start)));
 
-      const span = document.createElement("span");
-      span.className = "tooltip";
-      span.textContent = word;
+          const word = m[1];
+          const key = keys.find(k => k.toLowerCase() === word.toLowerCase());
 
-      const tip = document.createElement("span");
-      tip.className = "tooltiptext";
-      tip.textContent = tooltips[key];
-      span.appendChild(tip);
+          const span = document.createElement("span");
+          span.className = "tooltip";
+          span.textContent = word;
 
-      frag.appendChild(span);
-      last = start + word.length;
+          const tip = document.createElement("span");
+          tip.className = "tooltiptext";
+          tip.textContent = tooltips[key];
+          span.appendChild(tip);
+
+          frag.appendChild(span);
+          last = start + word.length;
+        }
+
+        if (last < text.length) frag.appendChild(document.createTextNode(text.slice(last)));
+        parent.replaceChild(frag, node);
+      });
     }
 
-    if (last < text.length) frag.appendChild(document.createTextNode(text.slice(last)));
-    parent.replaceChild(frag, node);
-  });
-}
-async function sendChoice(btn, season, choice) {
-  // Cherche tous les boutons dans le même container
-  const buttons = btn.parentElement.querySelectorAll(".choice-btn");
-  buttons.forEach(b => {
-    b.disabled = true;
-    b.classList.remove("selected");
-  });
+    async function sendChoice(btn, season, choice) {
+      const buttons = btn.parentElement.querySelectorAll(".choice-btn");
+      buttons.forEach(b => {
+        b.disabled = true;
+        b.classList.remove("selected");
+      });
 
-  btn.classList.add("selected");
-  document.title = `formage fraise - ${page}`;
-  try {
-    const res = await fetch("https://sheet-snt.vercel.app/api/update", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ season, choice })
-    });
-    const result = await res.json();
-    console.log(result.message);
-  } catch (err) {
-    console.error("Erreur:", err);
-  }
-}
+      btn.classList.add("selected");
+      document.title = `formage fraise - ${page}`;
+      try {
+        const res = await fetch("https://sheet-snt.vercel.app/api/update", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ season, choice })
+        });
+        const result = await res.json();
+        console.log(result.message);
+      } catch (err) {
+        console.error("Erreur:", err);
+      }
+    }
+
     renderPage();   
   </script>
 </body>
