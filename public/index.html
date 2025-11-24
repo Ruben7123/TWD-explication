@@ -43,20 +43,22 @@
     const params = new URLSearchParams(window.location.search);
     const page = params.get("page") || "landing-page";
     const titles = {
-    "s02": "Saison 2",
-    "s03": "Saison 3",
-    "s04": "Saison 4",
-    "s05": "Saison 5",
-    "s06": "Saison 6",
-    "s07": "Saison 7",
-    "s08": "Saison 8",
+      "landing-page": "Accueil",
+      "acteur": "Casting",
+      "lore": "Lore",
+      "amc": "AMC",
+      "s01": "Saison 1",
+      "s09": "Saison 9",
+      "s10": "Saison 10",
+      "s11": "Saison 11",
+      "default": "404 - Page introuvable",
     };
 
     document.title = `TWD - ${titles[page] || "Inconnu"}`;
     const mainPanel = document.querySelector(".main_panel");
     let actorsData = [];
 
-        async function loadActorsData() {
+    async function loadActorsData() {
       try {
         const response = await fetch('../src/json/modals.json');
         actorsData = await response.json();
@@ -65,30 +67,52 @@
       }
     } 
 
-  function generateActorCards(season) {
-    const seasonData = actorsData.find(s => s.season === season);
-    if (!seasonData || !seasonData.actors.length) {
-      return '<p>Aucun acteur trouvé pour cette saison.</p>';
+    function generateActorCards(season) {
+      const seasonData = actorsData.find(s => s.season === season);
+      if (!seasonData || !seasonData.actors.length) {
+        return '<p>Aucun acteur trouvé pour cette saison.</p>';
+      }
+
+      return seasonData.actors.map(actor => `
+        <div class="actor-card" data-actor="${actor.actor}">
+          <div id="actor-profile">
+            <img src="${actor.img}" alt="${actor.actor}"/>
+            <h3>${actor.actor}</h3>
+            <p>${actor.quickdescription}</p>
+          </div>
+        </div>
+      `).join('');
     }
 
-  return seasonData.actors.map(actor => `
-    <div class="actor-card" data-actor="${actor.actor}">
-      <div id="actor-profile">
-        <img src="${actor.img}" alt="${actor.actor}"/>
-        <h3>${actor.actor}</h3>
-        <p>${actor.quickdescription}</p>
-      </div>
-    </div>
-  `).join('');
-}
+    function generateFullActorCards(season) {
+      const seasonData = actorsData.find(s => s.season === season);
+      if (!seasonData || !seasonData.actors.length) {
+        return '';
+      }
+
+      const seasonNumber = season.replace('s', '');
+      const header = `<h2 class="season-divider">Saison ${parseInt(seasonNumber)}</h2>`;
+
+      const cards = seasonData.actors.map(actor => `
+        <div class="actor-card" data-actor="${actor.actor}">
+          <div id="actor-profile">
+            <img src="${actor.img}" alt="${actor.actor}"/>
+            <h3>${actor.actor}</h3>
+            <p>${actor.quickdescription}</p>
+          </div>
+        </div>
+      `).join('');
+
+      return header + cards;
+    }
 
     async function renderPage() {
       await loadActorsData();
 
       switch (page) {
-        case "s02":
+        case "s04":
           mainPanel.innerHTML = `
-            <h1 class="saison-header">Saison 2</h1>
+            <h1 class="saison-header">La Saison 1</h1>
             <div class="casting-card">
               <h2>Les personnages principaux :</h2>
               <div class="casting">
@@ -96,13 +120,57 @@
               </div>
             </div>
             <div class="content">
-              <h2 class="content-header">Résumé de la saison 2</h2>
-              
+              <h2 class="content-header">Résumé de la saison 1</h2>
+            <div class="sum-content">
+              <div class="ccontainer">
+              <div class="pcontainer">
+                <p>
+                  Juste une question que je vais vous poser à chaque saison : qui sont les vrais dangers ?
+                </p>
+              </div>
+                <div class="choice-buttons">
+                  <button class="choice-btn" onclick="sendChoice(this, 's01','humain')">Humain</button> 
+                  <button class="choice-btn" onclick="sendChoice(this, 's01','rodeurs')">Rôdeurs</button>
+                </div>
+              </div>
+            </div>
+          `;
+          break;
+        case "lore":
+          mainPanel.innerHTML = `
+            <h1>le Lore</h1>
+            <p>un lore </p>
+          `;
+          break;
+        case "s02":
+          mainPanel.innerHTML = `
+            <h1 class="saison-header">La Saison 1</h1>
+            <div class="casting-card">
+              <h2>Les personnages principaux :</h2>
+              <div class="casting">
+                ${generateActorCards('s02')}
+              </div>
+            </div>
+            <div class="content">
+              <h2 class="content-header">Résumé de la saison 1</h2>
+            <div class="sum-content">
+              <div class="ccontainer">
+              <div class="pcontainer">
+                <p>
+                  Juste une question que je vais vous poser à chaque saison : qui sont les vrais dangers ?
+                </p>
+              </div>
+                <div class="choice-buttons">
+                  <button class="choice-btn" onclick="sendChoice(this, 's01','humain')">Humain</button> 
+                  <button class="choice-btn" onclick="sendChoice(this, 's01','rodeurs')">Rôdeurs</button>
+                </div>
+              </div>
+            </div>
           `;
           break;
         case "s03":
           mainPanel.innerHTML = `
-            <h1 class="saison-header">Saison 3</h1>
+            <h1 class="saison-header">Saison 9</h1>
             <div class="casting-card">
               <h2>Les personnages principaux :</h2>
               <div class="casting">
@@ -110,81 +178,19 @@
               </div>
             </div>
             <div class="content">
-              <h2 class="content-header">Résumé de la saison 3</h2>
+              <h2 class="content-header">Résumé de la saison 9</h2>
             </div>
           `;
           break;
-        case "s04":
+        default:
           mainPanel.innerHTML = `
-            <h1 class="saison-header">Saison 4</h1>
-            <div class="casting-card">
-              <h2>Les personnages principaux :</h2>
-              <div class="casting">
-                ${generateActorCards('s04')}
-              </div>
-            </div>
-            <div class="content">
-              <h2 class="content-header">Résumé de la saison 4</h2>
-            </div>
+            <h1>404 - Page introuvable</h1>
+            <p>La page demandée n'existe pas.</p>
           `;
           break;
-        case "s05":
-          mainPanel.innerHTML = `
-            <h1 class="saison-header">Saison 5</h1>
-            <div class="casting-card">
-              <h2>Les personnages principaux :</h2>
-              <div class="casting">
-                ${generateActorCards('s05')}
-              </div>
-            </div>
-            <div class="content">
-              <h2 class="content-header">Résumé de la saison 5</h2>
-            </div>
-          `;
-          break;
-        case "s06":
-          mainPanel.innerHTML = `
-            <h1 class="saison-header">Saison 6</h1>
-            <div class="casting-card">
-              <h2>Les personnages principaux :</h2>
-              <div class="casting">
-                ${generateActorCards('s06')}
-              </div>
-            </div>
-            <div class="content">
-              <h2 class="content-header">Résumé de la saison 6</h2>
-            </div>
-          `;
-          break;
-        case "s07":
-          mainPanel.innerHTML = `
-            <h1 class="saison-header">Saison 7</h1>
-            <div class="casting-card">
-              <h2>Les personnages principaux :</h2>
-              <div class="casting">
-                ${generateActorCards('s07')}
-              </div>
-            </div>
-            <div class="content">
-              <h2 class="content-header">Résumé de la saison 7</h2>
-            </div>
-          `;
-          break;
-        case "s08":
-          mainPanel.innerHTML = `
-            <h1 class="saison-header">Saison 8</h1>
-            <div class="casting-card">
-              <h2>Les personnages principaux :</h2>
-              <div class="casting">
-                ${generateActorCards('s08')}
-              </div>
-            </div>
-            <div class="content">
-              <h2 class="content-header">Résumé de la saison 8</h2>
-            </div>
-          `;
-          break;
-attachEventListeners();
+      }
+
+      attachEventListeners();
       addTooltips();
     }
 
@@ -217,19 +223,37 @@ attachEventListeners();
 
       if (page.startsWith("s")) {
         const currentSeason = parseInt(page.slice(1));
+        
+        // Bouton précédent ou accueil
         if (currentSeason > 1) {
           const prevPage = `s${String(currentSeason - 1).padStart(2, "0")}`;
-          navHTML += `<button class="prev-btn" onclick="window.location.href='?page=${prevPage}'"> <img src="../src/img/back_arrow.svg" width="18" height="18"> Saison ${currentSeason - 1}</button>`;
+          navHTML += `<button class="prev-btn" onclick="window.location.href='?page=${prevPage}'">
+            <img src="../src/img/back_arrow.svg" width="18" height="18"> Saison ${currentSeason - 1}
+          </button>`;
         } else {
           navHTML += `<button class="home-btn" onclick="window.location.href='?page=landing-page'">Accueil</button>`;
         }
+        
+        // Bouton suivant ou casting
         if (currentSeason < totalSeasons) {
-          const nextPage = `s${String(currentSeason + 1).padStart(2, "0")}`;
-          navHTML += `<button class="next-btn" onclick="window.location.href='?page=${nextPage}'">Saison ${currentSeason + 1} <img src="../src/img/arrow.svg" width="18" height="18"></button>`;
+          const nextSeason = currentSeason + 1;
+          const nextPage = `s${String(nextSeason).padStart(2, '0')}`;
+          
+          // Si c'est s02, utiliser le chemin absolu
+          const nextHref = nextPage === 's02' 
+            ? '/public/index.html?page=s02' 
+            : `?page=${nextPage}`;
+          
+          navHTML += `<button class="next-btn" onclick="window.location.href='${nextHref}'">
+            Saison ${nextSeason}
+            <img src="../src/img/arrow.svg" width="18" height="18" alt="Next">
+          </button>`;
         } else {
-          navHTML += `<button class="home-btn" onclick="window.location.href='../index.html?page=acteur'">Vers le casting</button>`;
+          navHTML += `<button class="home-btn" onclick="window.location.href='?page=acteur'">
+            Vers le casting
+          </button>`;
         }
-
+        
         navContainer.innerHTML = navHTML;
         mainPanel.appendChild(navContainer);
       }
@@ -243,31 +267,28 @@ attachEventListeners();
         }
       }
 
-      // Attacher les modals
       refreshCastingModals();
     }
 
     function attachModalToCasting() {
-  const actorCards = document.querySelectorAll(".actor-card");
-  actorCards.forEach(card => {
-    card.style.cursor = "pointer";
+      const actorCards = document.querySelectorAll(".actor-card");
+      actorCards.forEach(card => {
+        card.style.cursor = "pointer";
+        card.addEventListener("click", (e) => {
+          const actorName = card.getAttribute('data-actor');
+          
+          let actorInfo;
+          for (const season of actorsData) {
+            actorInfo = season.actors.find(a => a.actor === actorName);
+            if (actorInfo) break;
+          }
 
-    card.addEventListener("click", (e) => {
-      const actorName = card.getAttribute('data-actor');
-      
-      // Chercher l'acteur dans toutes les saisons
-      let actorInfo;
-      for (const season of actorsData) {
-        actorInfo = season.actors.find(a => a.actor === actorName);
-        if (actorInfo) break;
-      }
-
-      if (actorInfo) {
-        openModal(actorInfo);
-      }
-    });
-  });
-}
+          if (actorInfo) {
+            openModal(actorInfo);
+          }
+        });
+      });
+    }
 
     function openModal(actor) {
       let modal = document.getElementById("modal");
@@ -299,160 +320,160 @@ attachEventListeners();
     function refreshCastingModals() {
       attachModalToCasting();
     }
-const tooltips = {
-  "Rick": "Shérif adjoint, leader du groupe",
-  "Rick Grimes": "Shérif adjoint, leader du groupe",
-  "Daryl": "Chasseur et traqueur expert à l’arbalète",
-  "Daryl Dixon": "Chasseur et traqueur expert à l’arbalète",
-  "Michonne": "Guerrière au katana",
-  "Michonne Hawthorne": "Guerrière au katana",
-  "Carol": "Combattante impitoyable et stratège",
-  "Carol Peletier": "Combattante impitoyable et stratège",
-  "Glenn": "Livreur de pizzas devenu explorateur courageux",
-  "Glenn Rhee": "Livreur de pizzas devenu explorateur courageux",
-  "Maggie": "Leader de Hilltop",
-  "Maggie Rhee": "Leader de Hilltop",
-  "Maggie Greene": "Leader de Hilltop",
-  "Negan": "Leader charismatique et brutal des Sauveurs",
-  "Negan Smith": "Leader charismatique et brutal des Sauveurs",
-  "Carl": "Fils de Rick",
-  "Carl Grimes": "Fils de Rick",
-  "Judith": "Fille de Rick et Michonne",
-  "Judith Grimes": "Fille de Rick et Michonne",
-  "Morgan": "Maître du bâton, « toute vie est précieuse »",
-  "Morgan Jones": "Maître du bâton, « toute vie est précieuse »",
-  "Lori": "Épouse de Rick",
-  "Lori Grimes": "Épouse de Rick",
-  "Shane": "Meilleur ami et rival de Rick",
-  "Shane Walsh": "Meilleur ami et rival de Rick",
-  "Andrea": "Tireuse d’élite",
-  "Dale": "Conscience morale du groupe",
-  "T-Dog": "Membre loyal du groupe d’Atlanta",
-  "Merle": "Frère aîné de Daryl",
-  "Merle Dixon": "Frère aîné de Daryl",
-  "Hershel": "Vétérinaire et patriarche",
-  "Hershel Greene": "Vétérinaire et patriarche",
-  "Beth": "Fille cadette d’Hershel, chanteuse",
-  "Beth Greene": "Fille cadette d’Hershel, chanteuse",
-  "Gouverneur": "Leader tyrannique de Woodbury",
-  "Le Gouverneur": "Leader tyrannique de Woodbury",
-  "Philip Blake": "Leader tyrannique de Woodbury",
-  "Sasha": "Tireuse d’élite",
-  "Sasha Williams": "Tireuse d’élite",
-  "Tyreese": "Force tranquille du groupe",
-  "Tyreese Williams": "Force tranquille du groupe",
-  "Abraham": "Sergent costaud et sarcastique",
-  "Abraham Ford": "Sergent costaud et sarcastique",
-  "Rosita": "Combattante et mère de Coco",
-  "Rosita Espinosa": "Combattante et mère de Coco",
-  "Eugene": "Scientifique mullet et fabricant de munitions",
-  "Eugène": "Scientifique mullet et fabricant de munitions",
-  "Eugene Porter": "Scientifique mullet et fabricant de munitions",
-  "Jesus": "Scout et combattant expert de Hilltop",
-  "Paul Rovia": "Scout et combattant expert de Hilltop",
-  "Ezekiel": "Roi du Royaume",
-  "Roi Ezekiel": "Roi du Royaume",
-  "Jerry": "Bras droit loyal et jovial d’Ezekiel",
-  "Alpha": "Leader des Chuchoteurs",
-  "Beta": "Bras droit massif d’Alpha",
-  "Lydia": "Fille d’Alpha",
-  "Gamma": "Espionne des Chuchoteurs (Mary)",
-  "Aaron": "Recruteur d’Alexandria",
-  "Gabriel": "Prêtre devenu guerrier",
-  "Gabriel Stokes": "Prêtre devenu guerrier",
-  "Princess": "Survivante excentrique et énergique",
-  "Juanita Sanchez": "Survivante excentrique et énergique",
-  "Pamela Milton": "Gouverneure du Commonwealth",
-  "Mercer": "Commandant de l’armée du Commonwealth",
-  "Lance Hornsby": "Bras droit manipulateur de Pamela",
-  "Alexandria": "Communauté fortifiée, refuge principal",
-  "La Zone sûre d’Alexandria": "Communauté fortifiée, refuge principal",
-  "Hilltop": "Colonie agricole dirigée un temps par Maggie",
-  "La Colline": "Colonie agricole dirigée un temps par Maggie",
-  "Le Royaume": "Communauté monarchique d’Ezekiel",
-  "Kingdom": "Communauté monarchique d’Ezekiel",
-  "Sanctuaire": "Base industrielle des Sauveurs",
-  "Le Sanctuaire": "Base industrielle des Sauveurs",
-  "Woodbury": "Ville fortifiée du Gouverneur",
-  "Terminus": "Piège mortel des cannibales",
-  "Commonwealth": "Immense cité de 50 000 habitants",
-  "Le Commonwealth": "Immense cité de 50 000 habitants",
-  "Prison": "Refuge du groupe saisons 3-4",
-  "La Prison": "Refuge du groupe saisons 3-4",
-  "Atlanta": "Ville d’origine, saison 1"
-};
 
-function addTooltips() {
-  const container = document.querySelector(".sum-content");
-  if (!container) return;
+    const tooltips = {
+      "Rick": "Shérif adjoint, leader du groupe",
+      "Rick Grimes": "Shérif adjoint, leader du groupe",
+      "Daryl": "Chasseur et traqueur expert à l'arbalète",
+      "Daryl Dixon": "Chasseur et traqueur expert à l'arbalète",
+      "Michonne": "Guerrière au katana",
+      "Michonne Hawthorne": "Guerrière au katana",
+      "Carol": "Combattante impitoyable et stratège",
+      "Carol Peletier": "Combattante impitoyable et stratège",
+      "Glenn": "Livreur de pizzas devenu explorateur courageux",
+      "Glenn Rhee": "Livreur de pizzas devenu explorateur courageux",
+      "Maggie": "Leader de Hilltop",
+      "Maggie Rhee": "Leader de Hilltop",
+      "Maggie Greene": "Leader de Hilltop",
+      "Negan": "Leader charismatique et brutal des Sauveurs",
+      "Negan Smith": "Leader charismatique et brutal des Sauveurs",
+      "Carl": "Fils de Rick",
+      "Carl Grimes": "Fils de Rick",
+      "Judith": "Fille de Rick et Michonne",
+      "Judith Grimes": "Fille de Rick et Michonne",
+      "Morgan": "Maître du bâton, « toute vie est précieuse »",
+      "Morgan Jones": "Maître du bâton, « toute vie est précieuse »",
+      "Lori": "Épouse de Rick",
+      "Lori Grimes": "Épouse de Rick",
+      "Shane": "Meilleur ami et rival de Rick",
+      "Shane Walsh": "Meilleur ami et rival de Rick",
+      "Andrea": "Tireuse d'élite",
+      "Dale": "Conscience morale du groupe",
+      "T-Dog": "Membre loyal du groupe d'Atlanta",
+      "Merle": "Frère aîné de Daryl",
+      "Merle Dixon": "Frère aîné de Daryl",
+      "Hershel": "Vétérinaire et patriarche",
+      "Hershel Greene": "Vétérinaire et patriarche",
+      "Beth": "Fille cadette d'Hershel, chanteuse",
+      "Beth Greene": "Fille cadette d'Hershel, chanteuse",
+      "Gouverneur": "Leader tyrannique de Woodbury",
+      "Le Gouverneur": "Leader tyrannique de Woodbury",
+      "Philip Blake": "Leader tyrannique de Woodbury",
+      "Sasha": "Tireuse d'élite",
+      "Sasha Williams": "Tireuse d'élite",
+      "Tyreese": "Force tranquille du groupe",
+      "Tyreese Williams": "Force tranquille du groupe",
+      "Abraham": "Sergent costaud et sarcastique",
+      "Abraham Ford": "Sergent costaud et sarcastique",
+      "Rosita": "Combattante et mère de Coco",
+      "Rosita Espinosa": "Combattante et mère de Coco",
+      "Eugene": "Scientifique mullet et fabricant de munitions",
+      "Eugène": "Scientifique mullet et fabricant de munitions",
+      "Eugene Porter": "Scientifique mullet et fabricant de munitions",
+      "Jesus": "Scout et combattant expert de Hilltop",
+      "Paul Rovia": "Scout et combattant expert de Hilltop",
+      "Ezekiel": "Roi du Royaume",
+      "Roi Ezekiel": "Roi du Royaume",
+      "Jerry": "Bras droit loyal et jovial d'Ezekiel",
+      "Alpha": "Leader des Chuchoteurs",
+      "Beta": "Bras droit massif d'Alpha",
+      "Lydia": "Fille d'Alpha",
+      "Gamma": "Espionne des Chuchoteurs (Mary)",
+      "Aaron": "Recruteur d'Alexandria",
+      "Gabriel": "Prêtre devenu guerrier",
+      "Gabriel Stokes": "Prêtre devenu guerrier",
+      "Princess": "Survivante excentrique et énergique",
+      "Juanita Sanchez": "Survivante excentrique et énergique",
+      "Pamela Milton": "Gouverneure du Commonwealth",
+      "Mercer": "Commandant de l'armée du Commonwealth",
+      "Lance Hornsby": "Bras droit manipulateur de Pamela",
+      "Alexandria": "Communauté fortifiée, refuge principal",
+      "La Zone sûre d'Alexandria": "Communauté fortifiée, refuge principal",
+      "Hilltop": "Colonie agricole dirigée un temps par Maggie",
+      "La Colline": "Colonie agricole dirigée un temps par Maggie",
+      "Le Royaume": "Communauté monarchique d'Ezekiel",
+      "Kingdom": "Communauté monarchique d'Ezekiel",
+      "Sanctuaire": "Base industrielle des Sauveurs",
+      "Le Sanctuaire": "Base industrielle des Sauveurs",
+      "Woodbury": "Ville fortifiée du Gouverneur",
+      "Terminus": "Piège mortel des cannibales",
+      "Commonwealth": "Immense cité de 50 000 habitants",
+      "Le Commonwealth": "Immense cité de 50 000 habitants",
+      "Prison": "Refuge du groupe saisons 3-4",
+      "La Prison": "Refuge du groupe saisons 3-4",
+      "Atlanta": "Ville d'origine, saison 1"
+    };
 
-  const keys = Object.keys(tooltips).sort((a, b) => b.length - a.length);
-  const pattern = keys.map(k => k.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')).join("|");
-  const regex = new RegExp(`(?<!\\p{L})(${pattern})(?!\\p{L})`, "giu");
+    function addTooltips() {
+      const container = document.querySelector(".sum-content");
+      if (!container) return;
 
-  const walker = document.createTreeWalker(container, NodeFilter.SHOW_TEXT, null, false);
-  const textNodes = [];
-  while (walker.nextNode()) textNodes.push(walker.currentNode);
+      const keys = Object.keys(tooltips).sort((a, b) => b.length - a.length);
+      const pattern = keys.map(k => k.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')).join("|");
+      const regex = new RegExp(`(?<!\\p{L})(${pattern})(?!\\p{L})`, "giu");
 
-  textNodes.forEach(node => {
-    const parent = node.parentNode;
-    if (parent.closest(".tooltip")) return;
+      const walker = document.createTreeWalker(container, NodeFilter.SHOW_TEXT, null, false);
+      const textNodes = [];
+      while (walker.nextNode()) textNodes.push(walker.currentNode);
 
-    const text = node.nodeValue;
-    if (!regex.test(text)) return;
-    regex.lastIndex = 0;
+      textNodes.forEach(node => {
+        const parent = node.parentNode;
+        if (parent.closest(".tooltip")) return;
 
-    const frag = document.createDocumentFragment();
-    let last = 0;
-    let m;
-    while ((m = regex.exec(text)) !== null) {
-      const start = m.index;
-      if (start > last) frag.appendChild(document.createTextNode(text.slice(last, start)));
+        const text = node.nodeValue;
+        if (!regex.test(text)) return;
+        regex.lastIndex = 0;
 
-      const word = m[1];
-      const key = keys.find(k => k.toLowerCase() === word.toLowerCase());
+        const frag = document.createDocumentFragment();
+        let last = 0;
+        let m;
+        while ((m = regex.exec(text)) !== null) {
+          const start = m.index;
+          if (start > last) frag.appendChild(document.createTextNode(text.slice(last, start)));
 
-      const span = document.createElement("span");
-      span.className = "tooltip";
-      span.textContent = word;
+          const word = m[1];
+          const key = keys.find(k => k.toLowerCase() === word.toLowerCase());
 
-      const tip = document.createElement("span");
-      tip.className = "tooltiptext";
-      tip.textContent = tooltips[key];
-      span.appendChild(tip);
+          const span = document.createElement("span");
+          span.className = "tooltip";
+          span.textContent = word;
 
-      frag.appendChild(span);
-      last = start + word.length;
+          const tip = document.createElement("span");
+          tip.className = "tooltiptext";
+          tip.textContent = tooltips[key];
+          span.appendChild(tip);
+
+          frag.appendChild(span);
+          last = start + word.length;
+        }
+
+        if (last < text.length) frag.appendChild(document.createTextNode(text.slice(last)));
+        parent.replaceChild(frag, node);
+      });
     }
 
-    if (last < text.length) frag.appendChild(document.createTextNode(text.slice(last)));
+    async function sendChoice(btn, season, choice) {
+      const buttons = btn.parentElement.querySelectorAll(".choice-btn");
+      buttons.forEach(b => {
+        b.disabled = true;
+        b.classList.remove("selected");
+      });
 
-    parent.replaceChild(frag, node);
-  });
-}
-async function sendChoice(btn, season, choice) {
-  // Cherche tous les boutons dans le même container
-  const buttons = btn.parentElement.querySelectorAll(".choice-btn");
-  buttons.forEach(b => {
-    b.disabled = true;
-    b.classList.remove("selected");
-  });
+      btn.classList.add("selected");
+      document.title = `formage fraise - ${page}`;
+      try {
+        const res = await fetch("https://sheet-snt.vercel.app/api/update", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ season, choice })
+        });
+        const result = await res.json();
+        console.log(result.message);
+      } catch (err) {
+        console.error("Erreur:", err);
+      }
+    }
 
-  btn.classList.add("selected");
-  document.title = `formage fraise - ${page}`;
-  try {
-    const res = await fetch("https://sheet-snt.vercel.app/api/update", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ season, choice })
-    });
-    const result = await res.json();
-    console.log(result.message);
-  } catch (err) {
-    console.error("Erreur:", err);
-  }
-}
     renderPage();
-}
 </script>
 </html>
